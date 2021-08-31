@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6edcee6-3b4a-4f04-9538-09bfd05e83aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/combined_data_links.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/combined_data_links.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index_Aug24_Exp1.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index_Aug24_Exp1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index_Aug24_Exp2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index_Aug24_Exp2.html" afterDir="false" />
-    </list>
+    <list default="true" id="b6edcee6-3b4a-4f04-9538-09bfd05e83aa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +45,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/index_Aug24_Exp1.html">
+        <entry file="file://$PROJECT_DIR$/pages/index_v1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
               <caret line="1522" column="11" selection-start-line="1522" selection-start-column="11" selection-end-line="1522" selection-end-column="11" />
@@ -92,7 +88,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/index_Aug24_Exp2.html">
+        <entry file="file://$PROJECT_DIR$/pages/index_v2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="543">
               <caret line="1473" column="4" selection-start-line="1473" selection-start-column="4" selection-end-line="1522" selection-end-column="11" />
@@ -204,6 +200,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1630452738682" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -230,16 +227,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630449059547</updated>
-      <workItem from="1630449061349" duration="2827000" />
+      <workItem from="1630449061349" duration="3193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2827000" />
+    <option name="totallyTimeSpent" value="3193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -284,7 +280,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index_Aug24_Exp2.html">
+    <entry file="file://$PROJECT_DIR$/pages/index_v2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="1473" column="4" selection-start-line="1473" selection-start-column="4" selection-end-line="1522" selection-end-column="11" />
@@ -326,7 +322,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index_Aug24_Exp1.html">
+    <entry file="file://$PROJECT_DIR$/pages/index_v1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="1522" column="11" selection-start-line="1522" selection-start-column="11" selection-end-line="1522" selection-end-column="11" />
