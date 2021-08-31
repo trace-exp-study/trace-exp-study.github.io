@@ -1,0 +1,4684 @@
+[
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1693",
+        "text": "As illustrated in PTC.SDD_.6501_status of field elements is consumed by the WIU which in turn creates a wayside_status_message and broadcasts that message out to any train within range .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "PTC.SDD_.6501_status",
+          "PTC.SDD",
+          "wayside_status_message"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "PTC.SDD_.6501_status": 0.5234306471912925
+          },
+          {
+            "PTC.SDD": 0.1604975840813126
+          },
+          {
+            "wayside_status_message": 0.3893837788648478
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.139",
+        "text": "The Wayside_Segment shall transmit information to the Locomotive_Segment in the form of wayside_status_messages ( WSMs ) [ REQ0392 Base_Source : / Caltrain_RFP / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Locomotive_Segment",
+          "Wayside_Segment",
+          "Base_Source",
+          "wayside_status_messages",
+          "Caltrain_RFP",
+          "WSMs"
+        ],
+        "terminology": [
+          "wayside_status_messages"
+        ],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [
+          {
+            "wayside_status_messages": "Wayside Status Messages (WSM) handle time critical communications from wayside to trains, relaxing the communication demands between the office and the field as compared to the existing centralized interlocking architectures."
+          }
+        ],
+        "importance_scores": [
+          {
+            "Locomotive_Segment": 0.3789741523840712
+          },
+          {
+            "Wayside_Segment": 0.3491185750370901
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "wayside_status_messages": 0.4024566428276443
+          },
+          {
+            "Caltrain_RFP": 0.537552326750073
+          },
+          {
+            "WSMs": 0.7781985656384834
+          }
+        ],
+        "score": 0.995,
+        "links": [
+          {
+            "source": "wayside_status_message",
+            "target": "Locomotive_Segment",
+            "relationship": [
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "to",
+                "concept_2": "locomotive"
+              },
+              {
+                "concept_1": "locomotive",
+                "relation_type": "match",
+                "concept_2": "locomotive_segment"
+              }
+            ]
+          },
+          {
+            "source": "wayside_status_message",
+            "target": "Wayside_Segment",
+            "relationship": [
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "handle",
+                "concept_2": "time_critical_communication"
+              },
+              {
+                "concept_1": "time_critical_communication",
+                "relation_type": "from",
+                "concept_2": "wayside"
+              },
+              {
+                "concept_1": "wayside",
+                "relation_type": "match",
+                "concept_2": "wayside_segment"
+              }
+            ]
+          },
+          {
+            "source": "wayside_status_message",
+            "target": "wayside_status_messages",
+            "relationship": [
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "synonym",
+                "concept_2": "wayside_status_messages"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1693",
+        "text": "As illustrated in PTC.SDD_.6501_status of field elements is consumed by the WIU which in turn creates a wayside_status_message and broadcasts that message out to any train within range .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.139",
+        "text": "The Wayside_Segment shall transmit information to the Locomotive_Segment in the form of wayside_status_messages ( WSMs ) [ REQ0392 Base_Source : / Caltrain_RFP / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.995,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6873",
+        "text": "The TG - PTC can only perform predictive enforcement when wayside_interface_units are available and operational .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "wayside_interface_units",
+          "PTC"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "wayside_interface_units": 0.5189764440339858
+          },
+          {
+            "PTC": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.164",
+        "text": "6.2.18 Predictive_Enforcement ( REQ1112 ) The Trainguard PTC System shall predictively enforce track_bulletins forms based authorities track devices speed limits derails or switches and consist or lading_speed_restrictions which includes train based permanent speed restrictions [ REQ1112 Base_Sources : / CONOPS / Section 5.11.2 / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "AAR",
+          "Predictive_Enforcement",
+          "Base_Source",
+          "lading_speed_restrictions",
+          "Base_Sources",
+          "PTC",
+          "track_bulletin",
+          "track_bulletins"
+        ],
+        "terminology": [
+          "AAR",
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "AAR": "American  Association of Railroads"
+          },
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          },
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "Predictive_Enforcement": 0.8157978959270408
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "lading_speed_restrictions": 0.5415088718182393
+          },
+          {
+            "Base_Sources": 0.2539827942748542
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "track_bulletin": 0.46366054634900994
+          },
+          {
+            "track_bulletins": 0.4018069346436761
+          }
+        ],
+        "score": 0.995,
+        "links": [
+          {
+            "source": "wayside_interface_units",
+            "target": "lading_speed_restrictions",
+            "relationship": [
+              {
+                "concept_1": "wayside_interface_unit",
+                "relation_type": "acronym",
+                "concept_2": "wiu"
+              },
+              {
+                "concept_1": "wiu",
+                "relation_type": "served_by",
+                "concept_2": "wayside_device"
+              },
+              {
+                "concept_1": "wayside_device",
+                "relation_type": "assume",
+                "concept_2": "obu"
+              },
+              {
+                "concept_1": "obu",
+                "relation_type": "to_enforce",
+                "concept_2": "speed_restriction"
+              },
+              {
+                "concept_1": "speed_restriction",
+                "relation_type": "match",
+                "concept_2": "lading_speed_restriction"
+              }
+            ]
+          },
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6873",
+        "text": "The TG - PTC can only perform predictive enforcement when wayside_interface_units are available and operational .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.164",
+        "text": "6.2.18 Predictive_Enforcement ( REQ1112 ) The Trainguard PTC System shall predictively enforce track_bulletins forms based authorities track devices speed limits derails or switches and consist or lading_speed_restrictions which includes train based permanent speed restrictions [ REQ1112 Base_Sources : / CONOPS / Section 5.11.2 / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "AAR",
+          "Predictive_Enforcement",
+          "Base_Source",
+          "lading_speed_restrictions",
+          "Base_Sources",
+          "PTC",
+          "track_bulletin",
+          "track_bulletins"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.995,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1790",
+        "text": "For interoperability purposes this interface is prescribed by the AAR ITC Committee . The interface is defined within the IDD OBU WIU / PTC - D - 0003 / . The ICD describes the message formats . The communications network connecting these subsystems uses the standard protocols described in EMP Specification / S - 9354 / ; Class_C Messaging Specification / S - 9355 / ; and Class_D Messaging Specification / S - 9356 / .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "AAR",
+          "EMP",
+          "PTC",
+          "ITC",
+          "OBU",
+          "WIU",
+          "Class_D",
+          "Class_C"
+        ],
+        "terminology": [
+          "AAR",
+          "EMP",
+          "PTC",
+          "ITC",
+          "OBU",
+          "WIU",
+          "Class_D",
+          "Class_C"
+        ],
+        "definitions": [
+          {
+            "Class_D": "A protocol that converts a stream based TCP protocol to a message or transaction based protocol. Class D also adds support for features such as connection monitoring/persistence and high availability. See section6.3.1."
+          },
+          {
+            "Class_C": "An AAR published protocol which is substantially based upon UDP/IP."
+          }
+        ],
+        "acronyms": [
+          {
+            "WIU": "Wayside Interface Unit"
+          },
+          {
+            "PTC": "Positive Train Control"
+          },
+          {
+            "OBU": "On Board Units"
+          },
+          {
+            "EMP": "Edge Message Protocol"
+          },
+          {
+            "AAR": "American  Association of Railroads"
+          },
+          {
+            "ITC": "Interoperable Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "OBU": "The OBU provides a safety overlay for railroad operations through brake enforcement."
+          },
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          },
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          }
+        ],
+        "importance_scores": [
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "EMP": 0.6315957918540813
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "ITC": 0.3740923008889212
+          },
+          {
+            "OBU": 0.09119558772263789
+          },
+          {
+            "WIU": 0.3202581176169614
+          },
+          {
+            "Class_D": 0.48799247783649374
+          },
+          {
+            "Class_C": 0.5533317004046764
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.302",
+        "text": "5.7.7.2 Interoperability_Betweeen_Wayside and Locomotive ( REQ1413 ) The Wayside_Segment through railroads standalone or integrated interfaces shall be designed to communicate with PTC / ITC Onboard System compliant Locomotives [ REQ1413 Base_Source : / S_-_9052D / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Wayside_Segment",
+          "Base_Source",
+          "Interoperability_Betweeen_Wayside",
+          "PTC",
+          "ITC",
+          "S_-_9052D"
+        ],
+        "terminology": [
+          "PTC",
+          "ITC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          },
+          {
+            "ITC": "Interoperable Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "Wayside_Segment": 0.3491185750370901
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "Interoperability_Betweeen_Wayside": 0.6635766732614686
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "ITC": 0.3740923008889212
+          },
+          {
+            "S_-_9052D": 0.18928951422157975
+          }
+        ],
+        "score": 0.843,
+        "links": [
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          },
+          {
+            "source": "ITC",
+            "target": "ITC",
+            "relationship": [
+              {
+                "concept_1": "ITC",
+                "relation_type": "synonym",
+                "concept_2": "ITC"
+              }
+            ]
+          },
+          {
+            "source": "OBU",
+            "target": "Wayside_Segment",
+            "relationship": [
+              {
+                "concept_1": "obu",
+                "relation_type": "assume",
+                "concept_2": "wayside_device"
+              },
+              {
+                "concept_1": "wayside_device",
+                "relation_type": "associated_with",
+                "concept_2": "wius"
+              },
+              {
+                "concept_1": "wius",
+                "relation_type": "generated_from",
+                "concept_2": "wayside_status_message"
+              },
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "handle",
+                "concept_2": "time_critical_communication"
+              },
+              {
+                "concept_1": "time_critical_communication",
+                "relation_type": "from",
+                "concept_2": "wayside"
+              },
+              {
+                "concept_1": "wayside",
+                "relation_type": "match",
+                "concept_2": "wayside_segment"
+              }
+            ]
+          },
+          {
+            "source": "OBU",
+            "target": "Interoperability_Betweeen_Wayside",
+            "relationship": [
+              {
+                "concept_1": "obu",
+                "relation_type": "assume",
+                "concept_2": "wayside_device"
+              },
+              {
+                "concept_1": "wayside_device",
+                "relation_type": "associated_with",
+                "concept_2": "wius"
+              },
+              {
+                "concept_1": "wius",
+                "relation_type": "generated_from",
+                "concept_2": "wayside_status_message"
+              },
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "handle",
+                "concept_2": "time_critical_communication"
+              },
+              {
+                "concept_1": "time_critical_communication",
+                "relation_type": "from",
+                "concept_2": "wayside"
+              },
+              {
+                "concept_1": "wayside",
+                "relation_type": "match",
+                "concept_2": "interoperability_betweeen_wayside"
+              }
+            ]
+          },
+          {
+            "source": "WIU",
+            "target": "Wayside_Segment",
+            "relationship": [
+              {
+                "concept_1": "wiu",
+                "relation_type": "served_by",
+                "concept_2": "wayside_device"
+              },
+              {
+                "concept_1": "wayside_device",
+                "relation_type": "associated_with",
+                "concept_2": "wius"
+              },
+              {
+                "concept_1": "wius",
+                "relation_type": "generated_from",
+                "concept_2": "wayside_status_message"
+              },
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "handle",
+                "concept_2": "time_critical_communication"
+              },
+              {
+                "concept_1": "time_critical_communication",
+                "relation_type": "from",
+                "concept_2": "wayside"
+              },
+              {
+                "concept_1": "wayside",
+                "relation_type": "match",
+                "concept_2": "wayside_segment"
+              }
+            ]
+          },
+          {
+            "source": "WIU",
+            "target": "Interoperability_Betweeen_Wayside",
+            "relationship": [
+              {
+                "concept_1": "wiu",
+                "relation_type": "served_by",
+                "concept_2": "wayside_device"
+              },
+              {
+                "concept_1": "wayside_device",
+                "relation_type": "associated_with",
+                "concept_2": "wius"
+              },
+              {
+                "concept_1": "wius",
+                "relation_type": "generated_from",
+                "concept_2": "wayside_status_message"
+              },
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "handle",
+                "concept_2": "time_critical_communication"
+              },
+              {
+                "concept_1": "time_critical_communication",
+                "relation_type": "from",
+                "concept_2": "wayside"
+              },
+              {
+                "concept_1": "wayside",
+                "relation_type": "match",
+                "concept_2": "interoperability_betweeen_wayside"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1790",
+        "text": "For interoperability purposes this interface is prescribed by the AAR ITC Committee . The interface is defined within the IDD OBU WIU / PTC - D - 0003 / . The ICD describes the message formats . The communications network connecting these subsystems uses the standard protocols described in EMP Specification / S - 9354 / ; Class_C Messaging Specification / S - 9355 / ; and Class_D Messaging Specification / S - 9356 / .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.302",
+        "text": "5.7.7.2 Interoperability_Betweeen_Wayside and Locomotive ( REQ1413 ) The Wayside_Segment through railroads standalone or integrated interfaces shall be designed to communicate with PTC / ITC Onboard System compliant Locomotives [ REQ1413 Base_Source : / S_-_9052D / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.843,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.7444",
+        "text": "Any critical failure during the Active Mode will force the OBU to enter the Failed Mode ( see transition_A-F in PTC.SDD .6534 ) .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "PTC.SDD",
+          "transition_A-F"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "PTC.SDD": 0.1604975840813126
+          },
+          {
+            "transition_A-F": 0.6972725590469079
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.459",
+        "text": "The Trainguard PTC System shall have a Failed Mode where the Locomotive segment_transitions if a vital hardware or software failure has been detected [ REQ1433 Base_Source : PTCDP ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "PTC",
+          "PTCDP",
+          "Base_Source",
+          "segment_transitions"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "PTC": 0
+          },
+          {
+            "PTCDP": 0.4612464235898584
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "segment_transitions": 0.5112726724098762
+          }
+        ],
+        "score": 0.995,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.7444",
+        "text": "Any critical failure during the Active Mode will force the OBU to enter the Failed Mode ( see transition_A-F in PTC.SDD .6534 ) .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.459",
+        "text": "The Trainguard PTC System shall have a Failed Mode where the Locomotive segment_transitions if a vital hardware or software failure has been detected [ REQ1433 Base_Source : PTCDP ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.995,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6752",
+        "text": "Whenever time_drift occurs the receiver shall always compare the message_timestamp with their internal clock for validity_purposes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "time_drift",
+          "validity_purposes",
+          "message_timestamp"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "time_drift": 0.511629011339165
+          },
+          {
+            "validity_purposes": 0.752722917637287
+          },
+          {
+            "message_timestamp": 0.6058297698231704
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.324",
+        "text": "5.11.12 Wayside_Time_Synchronization ( REQ1433 ) The Wayside_Segment WIU shall maintain its clock synchronization with an external time source as per design needs of the owning and operating railroads [ REQ1433 Base_Source : / S_-_9052D / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Wayside_Segment",
+          "Base_Source",
+          "WIU",
+          "Wayside_Time_Synchronization",
+          "operating_railroad",
+          "S_-_9052D"
+        ],
+        "terminology": [
+          "WIU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "WIU": "Wayside Interface Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "Wayside_Segment": 0.3491185750370901
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "WIU": 0.3202581176169614
+          },
+          {
+            "Wayside_Time_Synchronization": 0.5623995241641047
+          },
+          {
+            "operating_railroad": 0.3384158477284001
+          },
+          {
+            "S_-_9052D": 0.18928951422157975
+          }
+        ],
+        "score": 0.992,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6752",
+        "text": "Whenever time_drift occurs the receiver shall always compare the message_timestamp with their internal clock for validity_purposes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.324",
+        "text": "5.11.12 Wayside_Time_Synchronization ( REQ1433 ) The Wayside_Segment WIU shall maintain its clock synchronization with an external time source as per design needs of the owning and operating railroads [ REQ1433 Base_Source : / S_-_9052D / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.992,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1788",
+        "text": "For interoperability purposes this interface is prescribed by the AAR ITC Committee . The interface is defined within the Hardware Requirements for Integrated and Stand Alone Wayside Messaging Servers / S - 9202A / . The communications network connecting these subsystems uses the standard protocols described in EMP Specification / S - 9354 / Class_C Messaging Specification / S - 9355 / and Class_D Messaging Specification / S - 9356 / .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "AAR",
+          "EMP",
+          "ITC",
+          "Class_D",
+          "Wayside_Messaging_Server",
+          "Class_C"
+        ],
+        "terminology": [
+          "AAR",
+          "EMP",
+          "ITC",
+          "Class_D",
+          "Class_C"
+        ],
+        "definitions": [
+          {
+            "Class_C": "An AAR published protocol which is substantially based upon UDP/IP."
+          },
+          {
+            "Class_D": "A protocol that converts a stream based TCP protocol to a message or transaction based protocol. Class D also adds support for features such as connection monitoring/persistence and high availability. See section6.3.1."
+          }
+        ],
+        "acronyms": [
+          {
+            "EMP": "Edge Message Protocol"
+          },
+          {
+            "AAR": "American  Association of Railroads"
+          },
+          {
+            "ITC": "Interoperable Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          }
+        ],
+        "importance_scores": [
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "EMP": 0.6315957918540813
+          },
+          {
+            "ITC": 0.3740923008889212
+          },
+          {
+            "Class_D": 0.48799247783649374
+          },
+          {
+            "Wayside_Messaging_Server": 0.5356921907465795
+          },
+          {
+            "Class_C": 0.5533317004046764
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.108",
+        "text": "5.7.2 Communication via ITC Standard Interfaces ( REQ1099 ) The Trainguard PTC System interoperability shall be achieved through the specification and implementation of standard behavioral components which communicate with each other via ITC standard interfaces [ REQ1099 Base_Source : / AAR S - 9052A / ] . Guidance : Technical Interoperability .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "AAR",
+          "PTC",
+          "ITC",
+          "Base_Source"
+        ],
+        "terminology": [
+          "AAR",
+          "PTC",
+          "ITC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "ITC": "Interoperable Train Control"
+          },
+          {
+            "PTC": "Positive Train Control"
+          },
+          {
+            "AAR": "American  Association of Railroads"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          },
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          }
+        ],
+        "importance_scores": [
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "ITC": 0.3740923008889212
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          }
+        ],
+        "score": 0.663,
+        "links": [
+          {
+            "source": "AAR",
+            "target": "AAR",
+            "relationship": [
+              {
+                "concept_1": "AAR",
+                "relation_type": "synonym",
+                "concept_2": "AAR"
+              }
+            ]
+          },
+          {
+            "source": "ITC",
+            "target": "ITC",
+            "relationship": [
+              {
+                "concept_1": "ITC",
+                "relation_type": "synonym",
+                "concept_2": "ITC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.1788",
+        "text": "For interoperability purposes this interface is prescribed by the AAR ITC Committee . The interface is defined within the Hardware Requirements for Integrated and Stand Alone Wayside Messaging Servers / S - 9202A / . The communications network connecting these subsystems uses the standard protocols described in EMP Specification / S - 9354 / Class_C Messaging Specification / S - 9355 / and Class_D Messaging Specification / S - 9356 / .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.108",
+        "text": "5.7.2 Communication via ITC Standard Interfaces ( REQ1099 ) The Trainguard PTC System interoperability shall be achieved through the specification and implementation of standard behavioral components which communicate with each other via ITC standard interfaces [ REQ1099 Base_Source : / AAR S - 9052A / ] . Guidance : Technical Interoperability .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.663,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.7040",
+        "text": "The TG - PTC shall provide a means to safely protect all vital configuration data against identifiable corruption .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "PTC"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "PTC": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.41",
+        "text": "5.1.1 System Certification ( REQ1106 ) The Trainguard PTC System shall be capable of receiving FRA PTC System Certification per 49 CFR_236_Subpart I [ Source : / PTC Final Rule / 49 CFR 236 CFR_236_Subpart 236.1009 ( d ) ( 4 ) ( i ) / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "FRA",
+          "PTC",
+          "AAR",
+          "CFR_236_Subpart"
+        ],
+        "terminology": [
+          "FRA",
+          "PTC",
+          "AAR"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "FRA": "Federal Railroad Administration"
+          },
+          {
+            "PTC": "Positive Train Control"
+          },
+          {
+            "AAR": "American  Association of Railroads"
+          }
+        ],
+        "contexts": [
+          {
+            "FRA": "The FRA certified each host railroad\u2019s PTC system complies with the technical requirements for PTC systems."
+          },
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          },
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          }
+        ],
+        "importance_scores": [
+          {
+            "FRA": 0.6484530439308314
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "CFR_236_Subpart": 0.4232508100919267
+          }
+        ],
+        "score": 0.007,
+        "links": [
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.7040",
+        "text": "The TG - PTC shall provide a means to safely protect all vital configuration data against identifiable corruption .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.41",
+        "text": "5.1.1 System Certification ( REQ1106 ) The Trainguard PTC System shall be capable of receiving FRA PTC System Certification per 49 CFR_236_Subpart I [ Source : / PTC Final Rule / 49 CFR 236 CFR_236_Subpart 236.1009 ( d ) ( 4 ) ( i ) / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.007,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6715",
+        "text": "For the TG - PTC configuration data means the system must be able to configure itself during initialization to react and process information specific to the railroads . This process is not only demanding but challenging as applying the wrong techniques can cause bottlenecks . During subsystem design the TG - PTC will investigate patterns like Service_Locator_Dependency_Injection or simply a file containing data to be read in during initialization to determine the best possible way to deal with this type of configuration .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "PTC",
+          "Service_Locator_Dependency_Injection"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "PTC": 0
+          },
+          {
+            "Service_Locator_Dependency_Injection": 0.9722748207048104
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.66",
+        "text": "5.4.9 Closed Loop_Design ( REQ1132 ) The Trainguard PTC System shall be designed according to the closed loop_principle [ REQ1132 Base_Sources : / PTC Final Rule / 236 Subpart I Appendix C to Part 236 ( c ) / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "AAR",
+          "Base_Source",
+          "Base_Sources",
+          "PTC",
+          "Loop_Design",
+          "loop_principle"
+        ],
+        "terminology": [
+          "AAR",
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          },
+          {
+            "AAR": "American  Association of Railroads"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          },
+          {
+            "AAR": "AAR welcomes renewed call for Positive Train Control implementation extension"
+          }
+        ],
+        "importance_scores": [
+          {
+            "AAR": 0.23807162530482118
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "Base_Sources": 0.2539827942748542
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "Loop_Design": 0.7781985656384834
+          },
+          {
+            "loop_principle": 0.912113260982708
+          }
+        ],
+        "score": 0.04,
+        "links": [
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6715",
+        "text": "For the TG - PTC configuration data means the system must be able to configure itself during initialization to react and process information specific to the railroads . This process is not only demanding but challenging as applying the wrong techniques can cause bottlenecks . During subsystem design the TG - PTC will investigate patterns like Service_Locator_Dependency_Injection or simply a file containing data to be read in during initialization to determine the best possible way to deal with this type of configuration .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.66",
+        "text": "5.4.9 Closed Loop_Design ( REQ1132 ) The Trainguard PTC System shall be designed according to the closed loop_principle [ REQ1132 Base_Sources : / PTC Final Rule / 236 Subpart I Appendix C to Part 236 ( c ) / AAR S - 9052B / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.04,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6716",
+        "text": "The TG - PTC shall avoid utilizing a single system component or service to provide system_wide_configuration_data as this shall increase the possibility of an overall bottleneck at this component or service which could impact overall system performance . The TG - PTC therefore allows each of the subsystems to provide their own configuration_techniques ( as elaborated during detailed design of the subsystems ) .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "system_wide_configuration_data",
+          "PTC",
+          "configuration_techniques"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "system_wide_configuration_data": 0.3169037481779701
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "configuration_techniques": 0.6075880374655434
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.264",
+        "text": "5.4.10.12 Configuration_Information_Module ( REQ1384 ) The PTC communication system shall support fixing in the Radio a removable configuration information Configuration_Information_Module ) to which new configuration parameters can be downloaded remotely or locally after validating the security credentials of the user [ REQ1384 Base_Source : / S_-_9052C / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "PTC",
+          "Base_Source",
+          "S_-_9052C",
+          "Configuration_Information_Module"
+        ],
+        "terminology": [
+          "PTC",
+          "Configuration_Information_Module"
+        ],
+        "definitions": [
+          {
+            "Configuration_Information_Module": "A removable device used primarily to store site specific configuration information and log files. The CIM typically is associated with an installation location and can be transferred from one radio to another to maintain application continuity."
+          }
+        ],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "PTC": 0
+          },
+          {
+            "Base_Source": 0.1764327298421173
+          },
+          {
+            "S_-_9052C": 0.20200444414574095
+          },
+          {
+            "Configuration_Information_Module": 0.7349500584025994
+          }
+        ],
+        "score": 0.049,
+        "links": [
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.6716",
+        "text": "The TG - PTC shall avoid utilizing a single system component or service to provide system_wide_configuration_data as this shall increase the possibility of an overall bottleneck at this component or service which could impact overall system performance . The TG - PTC therefore allows each of the subsystems to provide their own configuration_techniques ( as elaborated during detailed design of the subsystems ) .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.264",
+        "text": "5.4.10.12 Configuration_Information_Module ( REQ1384 ) The PTC communication system shall support fixing in the Radio a removable configuration information Configuration_Information_Module ) to which new configuration parameters can be downloaded remotely or locally after validating the security credentials of the user [ REQ1384 Base_Source : / S_-_9052C / ] .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.049,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.351",
+        "text": "The TG - PTC shall provide a flexible architecture which will allow both current and future access to train_elements . Newer train models ( i.e. manufactured after June 2011 ) will have a Locomotive_Interface_Gateway ( LIG ) ( see / LIG_STD / ) used to access many of the elements required by the TG - PTC in a standardized way . Older train models may not have a LIG and require access to train_data in a different manner . The TG - PTC will support access to this data via the LIG or through direct wire whichever is applicable for the current installation .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "LIG_STD",
+          "train_elements",
+          "PTC",
+          "train_data",
+          "Locomotive_Interface_Gateway"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "LIG_STD": 0.8336489242288626
+          },
+          {
+            "train_elements": 0.26858526009288775
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "train_data": 0.14025566839921477
+          },
+          {
+            "Locomotive_Interface_Gateway": 0.4988313655550207
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.51",
+        "text": "5.3.2 Locomotive SegmentThe Locomotive_Segment is the collection of train - borne components that monitor the data necessary to enforce safe operating limits of the train in order to realize the four key PTC requirements ( see PTC.SRS .19 ) . Specifically the Locomotive Locomotive_Segment information from the BOS via base stations determines the train 's current location and position receives signal information from the WIUs calculates vital and warning breaking_curves and compares current speed to the maximum safe speed in order to intervene via penalty or emergency brake when necessary . Additionally the Locomotive Segment Locomotive_Segment reports and GPS position reports to the Office_segment . The hardware components of the Locomotive Segment are Locomotive_Segment PTC.SRS .52 .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Locomotive_Segment",
+          "WIUs",
+          "breaking_curves",
+          "Office_segment",
+          "PTC.SRS",
+          "PTC",
+          "SegmentThe_Locomotive_Segment"
+        ],
+        "terminology": [
+          "PTC"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "PTC": "Positive Train Control"
+          }
+        ],
+        "contexts": [
+          {
+            "PTC": "PTC can automatically reduce a train\u00e2\u0080\u0099s speed or even stop it to avoid a collision or derailment."
+          }
+        ],
+        "importance_scores": [
+          {
+            "Locomotive_Segment": 0.3789741523840712
+          },
+          {
+            "WIUs": 0.6024250876038991
+          },
+          {
+            "breaking_curves": 0.8890992828192418
+          },
+          {
+            "Office_segment": 0.46425093985787197
+          },
+          {
+            "PTC.SRS": 0.7781985656384834
+          },
+          {
+            "PTC": 0
+          },
+          {
+            "SegmentThe_Locomotive_Segment": 0.5859827682560474
+          }
+        ],
+        "score": 0.004,
+        "links": [
+          {
+            "source": "PTC",
+            "target": "PTC",
+            "relationship": [
+              {
+                "concept_1": "PTC",
+                "relation_type": "synonym",
+                "concept_2": "PTC"
+              }
+            ]
+          },
+          {
+            "source": "Locomotive_Interface_Gateway",
+            "target": "WIUs",
+            "relationship": [
+              {
+                "concept_1": "locomotive_interface_gateway",
+                "relation_type": "match",
+                "concept_2": "locomotive"
+              },
+              {
+                "concept_1": "locomotive",
+                "relation_type": "to",
+                "concept_2": "wayside_status_message"
+              },
+              {
+                "concept_1": "wayside_status_message",
+                "relation_type": "generated_from",
+                "concept_2": "wius"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "PTC.SDD.351",
+        "text": "The TG - PTC shall provide a flexible architecture which will allow both current and future access to train_elements . Newer train models ( i.e. manufactured after June 2011 ) will have a Locomotive_Interface_Gateway ( LIG ) ( see / LIG_STD / ) used to access many of the elements required by the TG - PTC in a standardized way . Older train models may not have a LIG and require access to train_data in a different manner . The TG - PTC will support access to this data via the LIG or through direct wire whichever is applicable for the current installation .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "PTC.SRS.51",
+        "text": "5.3.2 Locomotive SegmentThe Locomotive_Segment is the collection of train - borne components that monitor the data necessary to enforce safe operating limits of the train in order to realize the four key PTC requirements ( see PTC.SRS .19 ) . Specifically the Locomotive Locomotive_Segment information from the BOS via base stations determines the train 's current location and position receives signal information from the WIUs calculates vital and warning breaking_curves and compares current speed to the maximum safe speed in order to intervene via penalty or emergency brake when necessary . Additionally the Locomotive Segment Locomotive_Segment reports and GPS position reports to the Office_segment . The hardware components of the Locomotive Segment are Locomotive_Segment PTC.SRS .52 .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.004,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.2.1",
+        "text": "The DPU - CCM shall implement a mechanism whereby large memory loads and dumps can be accomplished incrementally .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.2.4",
+        "text": "Control and Monitoring the CCM Control Task also handles memory_dump_commands . In the event of a data_dump_command , the CCM Control Task will break the dump into manageable pieces and dump a small portion at a time , each time the task is awakened . The purpose of this \u201c deferred \u201d activity is to prevent a large dump from consuming available CPU time by keeping the high - priority CCM Command_Dispatch_Task busy for an extended period .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "data_dump_command",
+          "memory_dump_commands",
+          "CCM",
+          "Command_Dispatch_Task"
+        ],
+        "terminology": [
+          "CCM"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "data_dump_command": 0.3511226984112492
+          },
+          {
+            "memory_dump_commands": 0.5136049265269925
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "Command_Dispatch_Task": 0.41632807843749087
+          }
+        ],
+        "score": 0.431,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.2.1",
+        "text": "The DPU - CCM shall implement a mechanism whereby large memory loads and dumps can be accomplished incrementally .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.2.4",
+        "text": "Control and Monitoring the CCM Control Task also handles memory_dump_commands . In the event of a data_dump_command , the CCM Control Task will break the dump into manageable pieces and dump a small portion at a time , each time the task is awakened . The purpose of this \u201c deferred \u201d activity is to prevent a large dump from consuming available CPU time by keeping the high - priority CCM Command_Dispatch_Task busy for an extended period .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.431,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "LAST_BOOT_IVEC_location",
+          "commandability",
+          "ground_communication",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "LAST_BOOT_IVEC_location": 0.7065757898819127
+          },
+          {
+            "commandability": 1.0
+          },
+          {
+            "ground_communication": 0.725418033158041
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.2.1",
+        "text": "Control and Monitoring the CCM Control Task initializes the DPU FSW . It is the responsibility of the CCM Control Task to establish a successful boot . It does so by blocking on temporary semaphores , each with a 5 second timeout , after spawning the SCU Interface Task and the CCM Command Task . If both of these tasks report a successful initialization by giving the semaphore , the CCM Control Task toggles the BC_INDEX parameter in EEPROM to indicate a successful boot . If either task does not report a successful initialization , the CCM Control Task disables the watchdog_strobe to effect a reboot of the DPU . The rationale for selecting the successful initialization of these two tasks as the definition of a successful boot is that the DPU FSW requires these tasks , as a minimum , to establish ground contact and provide commandability.Once this initialization is complete , the task blocks on a binary semaphore which is given by the SCUI Command ISR upon arrival of the 1 Hz_Clock_Message . In the event a Clock_Message does not arrive , the semaphore will time out after 1.5 seconds . The CCM Control Task remains alive to create and transmit DPU housekeeping at the appropriate intervals , perform various periodic processing tasks , and to process memory_dump_commands . The final call to ccmErrEnq ( ) is performed in order that if an error occurs in an interrupt service routine , a global variable is set to the value of the errno which is then enqueued into the Error_/_Event_Queue as part of this task \u2019s normal processing .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "watchdog_strobe",
+          "FSW",
+          "ccmErrEnq",
+          "CCM",
+          "commandability.Once",
+          "Error_/_Event_Queue",
+          "DPU",
+          "Hz_Clock_Message",
+          "commandability",
+          "memory_dump_commands",
+          "Clock_Message",
+          "SCUI"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "DPU",
+          "SCUI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "SCUI": "SCU Interface CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "FSW": "Flight Software"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "watchdog_strobe": 0.6899557534394043
+          },
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "ccmErrEnq": 0.37991150687880865
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "commandability.Once": 1.0
+          },
+          {
+            "Error_/_Event_Queue": 0.4602865791684027
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "Hz_Clock_Message": 0.728098455600028
+          },
+          {
+            "commandability": 1.0
+          },
+          {
+            "memory_dump_commands": 0.5136049265269925
+          },
+          {
+            "Clock_Message": 0.7471698066803397
+          },
+          {
+            "SCUI": 0.6899557534394043
+          }
+        ],
+        "score": 0.541,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          },
+          {
+            "source": "commandability",
+            "target": "commandability",
+            "relationship": [
+              {
+                "concept_1": "commandability",
+                "relation_type": "synonym",
+                "concept_2": "commandability"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.2.1",
+        "text": "Control and Monitoring the CCM Control Task initializes the DPU FSW . It is the responsibility of the CCM Control Task to establish a successful boot . It does so by blocking on temporary semaphores , each with a 5 second timeout , after spawning the SCU Interface Task and the CCM Command Task . If both of these tasks report a successful initialization by giving the semaphore , the CCM Control Task toggles the BC_INDEX parameter in EEPROM to indicate a successful boot . If either task does not report a successful initialization , the CCM Control Task disables the watchdog_strobe to effect a reboot of the DPU . The rationale for selecting the successful initialization of these two tasks as the definition of a successful boot is that the DPU FSW requires these tasks , as a minimum , to establish ground contact and provide commandability.Once this initialization is complete , the task blocks on a binary semaphore which is given by the SCUI Command ISR upon arrival of the 1 Hz_Clock_Message . In the event a Clock_Message does not arrive , the semaphore will time out after 1.5 seconds . The CCM Control Task remains alive to create and transmit DPU housekeeping at the appropriate intervals , perform various periodic processing tasks , and to process memory_dump_commands . The final call to ccmErrEnq ( ) is performed in order that if an error occurs in an interrupt service routine , a global variable is set to the value of the errno which is then enqueued into the Error_/_Event_Queue as part of this task \u2019s normal processing .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.541,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.2",
+        "text": "The DPU - CCM shall provide a mechanism for other CSCs to report errors for inclusion in the DPU_HK .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "DPU_HK",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "DPU_HK": 0.6087677198425504
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "FSW",
+          "ccmErrEnq",
+          "ccmHkMkError",
+          "error_/_event_packet",
+          "CCM",
+          "ccmTask",
+          "CSC",
+          "DPU",
+          "Error_Collection",
+          "error_reporting_interface",
+          "SCUI"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "CSC",
+          "DPU",
+          "SCUI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "FSW": "Flight Software"
+          },
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "SCUI": "SCU Interface CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "ccmErrEnq": 0.37991150687880865
+          },
+          {
+            "ccmHkMkError": 1.0
+          },
+          {
+            "error_/_event_packet": 0.35160262236789097
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "ccmTask": 0.8043838599212754
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "Error_Collection": 0.4222584309098709
+          },
+          {
+            "error_reporting_interface": 0.3455874855841118
+          },
+          {
+            "SCUI": 0.6899557534394043
+          }
+        ],
+        "score": 0.495,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU_HK",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU_HK",
+                "relation_type": "parent",
+                "concept_2": "DPU"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.2",
+        "text": "The DPU - CCM shall provide a mechanism for other CSCs to report errors for inclusion in the DPU_HK .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.495,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.5",
+        "text": "The DPU - CCM shall check the length of a received DPU_CMD against an expected value from a lookup table indexed by FUNCTION code . If the received value does not match the expected , then the command will be discarded , and an error will be enqueued .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "DPU_CMD",
+          "CCM",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "DPU_CMD": 1.0
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.1.1",
+        "text": "Flight_Software_Initialization_The_Command and Control CSC is initialized by spawning the CCM Control Task , ccmCtrlTask ( ) , from the operating_system_startup_task , usrRoot ( ) . After the task is spawned it calls a function , ccmInit ( ) , which creates the error_/_event_queue , instantiates needed semaphores and installs various ISRs . Finally , it spawns the remaining tasks which comprise the DPU FSW . When the CCM Control Task starts up , it reads DPU configuration startup_defaults from the SYSTEM_CONFIG_AREA in EEPROM . If the SYSTEM_CONFIG_AREA checksum is bad , hard - coded defaults are used . The CCM Control Task initializes the remaining CSCs by calling the applicable initialization function , or if the CSC has an associated task , by spawning the task using the VxWorks \u00ae function , taskSpawn ( ) . When the CCM Control Task initializes a CSC , it passes the startup startup_defaults from EEPROM as parameters to the task_initialization_function . In addition to its task_initialization_activities , ccmInit ( ) , also initializes the command_length_verification_table by calling ccmCmdLengthInit ( ) . The command processor uses the created table to verify expected command_lengths for newly received commands .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "ccmCmdLengthInit",
+          "task_initialization_activities",
+          "FSW",
+          "CCM",
+          "task_initialization_function",
+          "ccmCtrlTask",
+          "command_length_verification_table",
+          "operating_system_startup_task",
+          "taskSpawn",
+          "DPU",
+          "startup_defaults",
+          "ccmInit",
+          "error_/_event_queue",
+          "command_lengths",
+          "Flight_Software_Initialization_The_Command"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "FSW": "Flight Software"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "ccmCmdLengthInit": 1.0
+          },
+          {
+            "task_initialization_activities": 0.5621950694310911
+          },
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "task_initialization_function": 0.29567050152422153
+          },
+          {
+            "ccmCtrlTask": 0.6087677198425504
+          },
+          {
+            "command_length_verification_table": 0.6336181538147865
+          },
+          {
+            "operating_system_startup_task": 0.7111292154549353
+          },
+          {
+            "taskSpawn": 1.0
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "startup_defaults": 0.8043838599212754
+          },
+          {
+            "ccmInit": 1.0
+          },
+          {
+            "error_/_event_queue": 0.26321567396659257
+          },
+          {
+            "command_lengths": 0.6178745709885957
+          },
+          {
+            "Flight_Software_Initialization_The_Command": 0.5925852600616571
+          }
+        ],
+        "score": 0.423,
+        "links": [
+          {
+            "source": "DPU_CMD",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU_CMD",
+                "relation_type": "parent",
+                "concept_2": "DPU"
+              }
+            ]
+          },
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.5",
+        "text": "The DPU - CCM shall check the length of a received DPU_CMD against an expected value from a lookup table indexed by FUNCTION code . If the received value does not match the expected , then the command will be discarded , and an error will be enqueued .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.1.1",
+        "text": "Flight_Software_Initialization_The_Command and Control CSC is initialized by spawning the CCM Control Task , ccmCtrlTask ( ) , from the operating_system_startup_task , usrRoot ( ) . After the task is spawned it calls a function , ccmInit ( ) , which creates the error_/_event_queue , instantiates needed semaphores and installs various ISRs . Finally , it spawns the remaining tasks which comprise the DPU FSW . When the CCM Control Task starts up , it reads DPU configuration startup_defaults from the SYSTEM_CONFIG_AREA in EEPROM . If the SYSTEM_CONFIG_AREA checksum is bad , hard - coded defaults are used . The CCM Control Task initializes the remaining CSCs by calling the applicable initialization function , or if the CSC has an associated task , by spawning the task using the VxWorks \u00ae function , taskSpawn ( ) . When the CCM Control Task initializes a CSC , it passes the startup startup_defaults from EEPROM as parameters to the task_initialization_function . In addition to its task_initialization_activities , ccmInit ( ) , also initializes the command_length_verification_table by calling ccmCmdLengthInit ( ) . The command processor uses the created table to verify expected command_lengths for newly received commands .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.423,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.1.1",
+        "text": "The DPU - TMALI shall install callbacks for handling all DPU - DCI interrupts including Error interrupt , Ping - Pong_Timeout interrupt , and Ping_-_Pong_Complete_Flag interrupt .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "Pong_Timeout",
+          "DCI",
+          "TMALI",
+          "DPU",
+          "Ping_-_Pong_Complete_Flag"
+        ],
+        "terminology": [
+          "DCI",
+          "DPU",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          },
+          {
+            "DCI": "Data Capture Interface"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "Pong_Timeout": 0.592147683400042
+          },
+          {
+            "DCI": 0.08051812566451025
+          },
+          {
+            "TMALI": 0.08051812566451025
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "Ping_-_Pong_Complete_Flag": 0.539671609479513
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.0.2",
+        "text": "Telescope_Module_Access_Library and Interface CSC The TMALI CSC includes the following components : * A queue , TMALI_EVENT_QUEUE , implemented using a ring buffer , which contains the detector_events which have been received over the data_capture_interface from the DCI Driver , but which have not yet been retrieved by the DPA CSC ; * An API which facilitates the retrieval of detector detector_events the queue by the DPA CSC . The API consists of the tmaliNextEvent ( ) and tmaliWait ( ) functions . * An set of API functions used by the DPA CSC to configure the DCI interface , including tmaliBitArrangementSet ( ) , tmaliDciFrameDepthGet ( ) , tmaliDciFrameDepthSet ( ) , tmaliDciWindowSet ( ) , tmaliDataTimeoutSet ( ) , and tmaliDataTimeoutGet ( ) . * An API housekeeping function , tmaliHkGet ( ) , which gathers CSC housekeeping data at the request of the Command and Control Task . * The task_tmaliTask ( ) and an ISR_tmaliTransferToQueueISR ( ) work together via a semaphore to synchronize the transfer of data from the DCI to the queue An error handling ISR , tmaliDciErrorReportedISR ( ) , is installed as a hook_routine to the DCI Driver , and is used to keep track of the number of errors reported by the DCI driver .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "tmaliTask",
+          "TMALI_EVENT_QUEUE",
+          "tmaliNextEvent",
+          "CSC",
+          "data_capture_interface",
+          "tmaliDciFrameDepthSet",
+          "DCI",
+          "DPA",
+          "ISR_tmaliTransferToQueueISR",
+          "hook_routine",
+          "tmaliHkGet",
+          "tmaliTransferToQueueISR",
+          "tmaliBitArrangementSet",
+          "API",
+          "Telescope_Module_Access_Library",
+          "tmaliDciErrorReportedISR",
+          "tmaliWait",
+          "task_tmaliTask",
+          "tmaliDataTimeoutGet",
+          "detector_events",
+          "TMALI"
+        ],
+        "terminology": [
+          "CSC",
+          "API",
+          "DCI",
+          "DPA",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          },
+          {
+            "DPA": "Data Processing Algorithm CSC"
+          },
+          {
+            "API": "Application Programming Interface"
+          },
+          {
+            "DCI": "Data Capture Interface"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "tmaliTask": 0.4131515797638255
+          },
+          {
+            "TMALI_EVENT_QUEUE": 0.5457933885377871
+          },
+          {
+            "tmaliNextEvent": 0.6087677198425504
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "data_capture_interface": 0.5025249022319869
+          },
+          {
+            "tmaliDciFrameDepthSet": 0.8043838599212754
+          },
+          {
+            "DCI": 0.08051812566451025
+          },
+          {
+            "DPA": 0.4943396133606796
+          },
+          {
+            "ISR_tmaliTransferToQueueISR": 0.5200665009492332
+          },
+          {
+            "hook_routine": 0.5200665009492332
+          },
+          {
+            "tmaliHkGet": 0.6899557534394043
+          },
+          {
+            "tmaliTransferToQueueISR": 0.6899557534394043
+          },
+          {
+            "tmaliBitArrangementSet": 0.8043838599212754
+          },
+          {
+            "API": 0.6087677198425504
+          },
+          {
+            "Telescope_Module_Access_Library": 0.8043838599212754
+          },
+          {
+            "tmaliDciErrorReportedISR": 0.8043838599212754
+          },
+          {
+            "tmaliWait": 0.6087677198425504
+          },
+          {
+            "task_tmaliTask": 0.3244503608705084
+          },
+          {
+            "tmaliDataTimeoutGet": 1.0
+          },
+          {
+            "detector_events": 0.6087677198425504
+          },
+          {
+            "TMALI": 0.08051812566451025
+          }
+        ],
+        "score": 0.433,
+        "links": [
+          {
+            "source": "DCI",
+            "target": "DCI",
+            "relationship": [
+              {
+                "concept_1": "DCI",
+                "relation_type": "synonym",
+                "concept_2": "DCI"
+              }
+            ]
+          },
+          {
+            "source": "DCI",
+            "target": "data_capture_interface",
+            "relationship": [
+              {
+                "concept_1": "dci",
+                "relation_type": "acronym",
+                "concept_2": "data_capture_interface"
+              }
+            ]
+          },
+          {
+            "source": "TMALI",
+            "target": "TMALI_EVENT_QUEUE",
+            "relationship": [
+              {
+                "concept_1": "TMALI",
+                "relation_type": "parent",
+                "concept_2": "TMALI_EVENT_QUEUE"
+              }
+            ]
+          },
+          {
+            "source": "TMALI",
+            "target": "TMALI",
+            "relationship": [
+              {
+                "concept_1": "TMALI",
+                "relation_type": "synonym",
+                "concept_2": "TMALI"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.1.1",
+        "text": "The DPU - TMALI shall install callbacks for handling all DPU - DCI interrupts including Error interrupt , Ping - Pong_Timeout interrupt , and Ping_-_Pong_Complete_Flag interrupt .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.0.2",
+        "text": "Telescope_Module_Access_Library and Interface CSC The TMALI CSC includes the following components : * A queue , TMALI_EVENT_QUEUE , implemented using a ring buffer , which contains the detector_events which have been received over the data_capture_interface from the DCI Driver , but which have not yet been retrieved by the DPA CSC ; * An API which facilitates the retrieval of detector detector_events the queue by the DPA CSC . The API consists of the tmaliNextEvent ( ) and tmaliWait ( ) functions . * An set of API functions used by the DPA CSC to configure the DCI interface , including tmaliBitArrangementSet ( ) , tmaliDciFrameDepthGet ( ) , tmaliDciFrameDepthSet ( ) , tmaliDciWindowSet ( ) , tmaliDataTimeoutSet ( ) , and tmaliDataTimeoutGet ( ) . * An API housekeeping function , tmaliHkGet ( ) , which gathers CSC housekeeping data at the request of the Command and Control Task . * The task_tmaliTask ( ) and an ISR_tmaliTransferToQueueISR ( ) work together via a semaphore to synchronize the transfer of data from the DCI to the queue An error handling ISR , tmaliDciErrorReportedISR ( ) , is installed as a hook_routine to the DCI Driver , and is used to keep track of the number of errors reported by the DCI driver .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.433,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.1.2",
+        "text": "The DPU - TMALI shall be capable of making data available from the DCI to DPU - DPA . DPU - TMALI will populate a ring buffer with frames of data for application_task_retrieval .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "DPA",
+          "TMALI",
+          "DPU",
+          "application_task_retrieval"
+        ],
+        "terminology": [
+          "DPA",
+          "DPU",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          },
+          {
+            "DPA": "Data Processing Algorithm CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "DPA": 0.4943396133606796
+          },
+          {
+            "TMALI": 0.08051812566451025
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "application_task_retrieval": 0.5766962517792902
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.0.2",
+        "text": "Telescope_Module_Access_Library and Interface CSC The TMALI CSC includes the following components : * A queue , TMALI_EVENT_QUEUE , implemented using a ring buffer , which contains the detector_events which have been received over the data_capture_interface from the DCI Driver , but which have not yet been retrieved by the DPA CSC ; * An API which facilitates the retrieval of detector detector_events the queue by the DPA CSC . The API consists of the tmaliNextEvent ( ) and tmaliWait ( ) functions . * An set of API functions used by the DPA CSC to configure the DCI interface , including tmaliBitArrangementSet ( ) , tmaliDciFrameDepthGet ( ) , tmaliDciFrameDepthSet ( ) , tmaliDciWindowSet ( ) , tmaliDataTimeoutSet ( ) , and tmaliDataTimeoutGet ( ) . * An API housekeeping function , tmaliHkGet ( ) , which gathers CSC housekeeping data at the request of the Command and Control Task . * The task_tmaliTask ( ) and an ISR_tmaliTransferToQueueISR ( ) work together via a semaphore to synchronize the transfer of data from the DCI to the queue An error handling ISR , tmaliDciErrorReportedISR ( ) , is installed as a hook_routine to the DCI Driver , and is used to keep track of the number of errors reported by the DCI driver .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "tmaliTask",
+          "TMALI_EVENT_QUEUE",
+          "tmaliNextEvent",
+          "CSC",
+          "data_capture_interface",
+          "tmaliDciFrameDepthSet",
+          "DCI",
+          "DPA",
+          "ISR_tmaliTransferToQueueISR",
+          "hook_routine",
+          "tmaliHkGet",
+          "tmaliTransferToQueueISR",
+          "tmaliBitArrangementSet",
+          "API",
+          "Telescope_Module_Access_Library",
+          "tmaliDciErrorReportedISR",
+          "tmaliWait",
+          "task_tmaliTask",
+          "tmaliDataTimeoutGet",
+          "detector_events",
+          "TMALI"
+        ],
+        "terminology": [
+          "CSC",
+          "API",
+          "DCI",
+          "DPA",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          },
+          {
+            "DPA": "Data Processing Algorithm CSC"
+          },
+          {
+            "API": "Application Programming Interface"
+          },
+          {
+            "DCI": "Data Capture Interface"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "tmaliTask": 0.4131515797638255
+          },
+          {
+            "TMALI_EVENT_QUEUE": 0.5457933885377871
+          },
+          {
+            "tmaliNextEvent": 0.6087677198425504
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "data_capture_interface": 0.5025249022319869
+          },
+          {
+            "tmaliDciFrameDepthSet": 0.8043838599212754
+          },
+          {
+            "DCI": 0.08051812566451025
+          },
+          {
+            "DPA": 0.4943396133606796
+          },
+          {
+            "ISR_tmaliTransferToQueueISR": 0.5200665009492332
+          },
+          {
+            "hook_routine": 0.5200665009492332
+          },
+          {
+            "tmaliHkGet": 0.6899557534394043
+          },
+          {
+            "tmaliTransferToQueueISR": 0.6899557534394043
+          },
+          {
+            "tmaliBitArrangementSet": 0.8043838599212754
+          },
+          {
+            "API": 0.6087677198425504
+          },
+          {
+            "Telescope_Module_Access_Library": 0.8043838599212754
+          },
+          {
+            "tmaliDciErrorReportedISR": 0.8043838599212754
+          },
+          {
+            "tmaliWait": 0.6087677198425504
+          },
+          {
+            "task_tmaliTask": 0.3244503608705084
+          },
+          {
+            "tmaliDataTimeoutGet": 1.0
+          },
+          {
+            "detector_events": 0.6087677198425504
+          },
+          {
+            "TMALI": 0.08051812566451025
+          }
+        ],
+        "score": 0.508,
+        "links": [
+          {
+            "source": "DPA",
+            "target": "DPA",
+            "relationship": [
+              {
+                "concept_1": "DPA",
+                "relation_type": "synonym",
+                "concept_2": "DPA"
+              }
+            ]
+          },
+          {
+            "source": "TMALI",
+            "target": "TMALI_EVENT_QUEUE",
+            "relationship": [
+              {
+                "concept_1": "TMALI",
+                "relation_type": "parent",
+                "concept_2": "TMALI_EVENT_QUEUE"
+              }
+            ]
+          },
+          {
+            "source": "TMALI",
+            "target": "TMALI",
+            "relationship": [
+              {
+                "concept_1": "TMALI",
+                "relation_type": "synonym",
+                "concept_2": "TMALI"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.1.2",
+        "text": "The DPU - TMALI shall be capable of making data available from the DCI to DPU - DPA . DPU - TMALI will populate a ring buffer with frames of data for application_task_retrieval .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.0.2",
+        "text": "Telescope_Module_Access_Library and Interface CSC The TMALI CSC includes the following components : * A queue , TMALI_EVENT_QUEUE , implemented using a ring buffer , which contains the detector_events which have been received over the data_capture_interface from the DCI Driver , but which have not yet been retrieved by the DPA CSC ; * An API which facilitates the retrieval of detector detector_events the queue by the DPA CSC . The API consists of the tmaliNextEvent ( ) and tmaliWait ( ) functions . * An set of API functions used by the DPA CSC to configure the DCI interface , including tmaliBitArrangementSet ( ) , tmaliDciFrameDepthGet ( ) , tmaliDciFrameDepthSet ( ) , tmaliDciWindowSet ( ) , tmaliDataTimeoutSet ( ) , and tmaliDataTimeoutGet ( ) . * An API housekeeping function , tmaliHkGet ( ) , which gathers CSC housekeeping data at the request of the Command and Control Task . * The task_tmaliTask ( ) and an ISR_tmaliTransferToQueueISR ( ) work together via a semaphore to synchronize the transfer of data from the DCI to the queue An error handling ISR , tmaliDciErrorReportedISR ( ) , is installed as a hook_routine to the DCI Driver , and is used to keep track of the number of errors reported by the DCI driver .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.508,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "LAST_BOOT_IVEC_location",
+          "commandability",
+          "ground_communication",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "LAST_BOOT_IVEC_location": 0.7065757898819127
+          },
+          {
+            "commandability": 1.0
+          },
+          {
+            "ground_communication": 0.725418033158041
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.1.1",
+        "text": "Flight_Software_Initialization_The_Command and Control CSC is initialized by spawning the CCM Control Task , ccmCtrlTask ( ) , from the operating_system_startup_task , usrRoot ( ) . After the task is spawned it calls a function , ccmInit ( ) , which creates the error_/_event_queue , instantiates needed semaphores and installs various ISRs . Finally , it spawns the remaining tasks which comprise the DPU FSW . When the CCM Control Task starts up , it reads DPU configuration startup_defaults from the SYSTEM_CONFIG_AREA in EEPROM . If the SYSTEM_CONFIG_AREA checksum is bad , hard - coded defaults are used . The CCM Control Task initializes the remaining CSCs by calling the applicable initialization function , or if the CSC has an associated task , by spawning the task using the VxWorks \u00ae function , taskSpawn ( ) . When the CCM Control Task initializes a CSC , it passes the startup startup_defaults from EEPROM as parameters to the task_initialization_function . In addition to its task_initialization_activities , ccmInit ( ) , also initializes the command_length_verification_table by calling ccmCmdLengthInit ( ) . The command processor uses the created table to verify expected command_lengths for newly received commands .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "ccmCmdLengthInit",
+          "task_initialization_activities",
+          "FSW",
+          "CCM",
+          "task_initialization_function",
+          "ccmCtrlTask",
+          "command_length_verification_table",
+          "operating_system_startup_task",
+          "taskSpawn",
+          "DPU",
+          "startup_defaults",
+          "ccmInit",
+          "error_/_event_queue",
+          "command_lengths",
+          "Flight_Software_Initialization_The_Command"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "FSW": "Flight Software"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "ccmCmdLengthInit": 1.0
+          },
+          {
+            "task_initialization_activities": 0.5621950694310911
+          },
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "task_initialization_function": 0.29567050152422153
+          },
+          {
+            "ccmCtrlTask": 0.6087677198425504
+          },
+          {
+            "command_length_verification_table": 0.6336181538147865
+          },
+          {
+            "operating_system_startup_task": 0.7111292154549353
+          },
+          {
+            "taskSpawn": 1.0
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "startup_defaults": 0.8043838599212754
+          },
+          {
+            "ccmInit": 1.0
+          },
+          {
+            "error_/_event_queue": 0.26321567396659257
+          },
+          {
+            "command_lengths": 0.6178745709885957
+          },
+          {
+            "Flight_Software_Initialization_The_Command": 0.5925852600616571
+          }
+        ],
+        "score": 0.506,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.1.1",
+        "text": "Flight_Software_Initialization_The_Command and Control CSC is initialized by spawning the CCM Control Task , ccmCtrlTask ( ) , from the operating_system_startup_task , usrRoot ( ) . After the task is spawned it calls a function , ccmInit ( ) , which creates the error_/_event_queue , instantiates needed semaphores and installs various ISRs . Finally , it spawns the remaining tasks which comprise the DPU FSW . When the CCM Control Task starts up , it reads DPU configuration startup_defaults from the SYSTEM_CONFIG_AREA in EEPROM . If the SYSTEM_CONFIG_AREA checksum is bad , hard - coded defaults are used . The CCM Control Task initializes the remaining CSCs by calling the applicable initialization function , or if the CSC has an associated task , by spawning the task using the VxWorks \u00ae function , taskSpawn ( ) . When the CCM Control Task initializes a CSC , it passes the startup startup_defaults from EEPROM as parameters to the task_initialization_function . In addition to its task_initialization_activities , ccmInit ( ) , also initializes the command_length_verification_table by calling ccmCmdLengthInit ( ) . The command processor uses the created table to verify expected command_lengths for newly received commands .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.506,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.3.1",
+        "text": "The DPU - TMALI shall utilize SCM_DCI_SR , along with ERRNO provided by DPU - DCI to decode errors and place them on an error queue for DPU - CCM .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "DCI",
+          "SCM_DCI_SR",
+          "CCM",
+          "DPU",
+          "TMALI"
+        ],
+        "terminology": [
+          "DCI",
+          "CCM",
+          "DPU",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          },
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DCI": "Data Capture Interface"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "DCI": 0.08051812566451025
+          },
+          {
+            "SCM_DCI_SR": 1.0
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "TMALI": 0.08051812566451025
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "FSW",
+          "ccmErrEnq",
+          "ccmHkMkError",
+          "error_/_event_packet",
+          "CCM",
+          "ccmTask",
+          "CSC",
+          "DPU",
+          "Error_Collection",
+          "error_reporting_interface",
+          "SCUI"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "CSC",
+          "DPU",
+          "SCUI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "FSW": "Flight Software"
+          },
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "SCUI": "SCU Interface CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "ccmErrEnq": 0.37991150687880865
+          },
+          {
+            "ccmHkMkError": 1.0
+          },
+          {
+            "error_/_event_packet": 0.35160262236789097
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "ccmTask": 0.8043838599212754
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "Error_Collection": 0.4222584309098709
+          },
+          {
+            "error_reporting_interface": 0.3455874855841118
+          },
+          {
+            "SCUI": 0.6899557534394043
+          }
+        ],
+        "score": 0.495,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.13.3.1",
+        "text": "The DPU - TMALI shall utilize SCM_DCI_SR , along with ERRNO provided by DPU - DCI to decode errors and place them on an error queue for DPU - CCM .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.495,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.2",
+        "text": "The DPU - CCM shall provide a mechanism for other CSCs to report errors for inclusion in the DPU_HK .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "DPU_HK",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "DPU_HK": 0.6087677198425504
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.2.7",
+        "text": "Public Functions This routine gets housekeeping data stored for the TMALI CSC including some DCI parameters and resets the TMALI internal counters to zero . When the caller supplied pointer to a TMALI_HK structure is NIL no data is returned but the TMALI internal counters are still reset to zero.Two of the four error counters are updated within an ISR_context , this requires a task_switch_safe_implementation of these counters . Within VxWorks this could be solved using a counting semaphore . In the TMALI CSC design a faster method was used by using a free running_error_counter and a careful update of the reported number of errors , using an extra temporary variable . As the increment and assignment of the 32 bit unsigned integers themselves are \u2018 atomic \u2019 operations the resulting counters are task safe and no error events are lost . This means that the sum of the errors reported by the tmaliHkGet ( ) function is equal to the total numbers of errors that occurred , no error reports are lost due to the update of the internal structures .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "tmaliHkGet",
+          "TMALI_HK",
+          "CSC",
+          "ISR_context",
+          "task_switch_safe_implementation",
+          "TMALI",
+          "running_error_counter"
+        ],
+        "terminology": [
+          "CSC",
+          "TMALI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "TMALI": "Telescope Module Access Library Interface CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "tmaliHkGet": 0.6899557534394043
+          },
+          {
+            "TMALI_HK": 0.5457933885377871
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "ISR_context": 0.44798531849842466
+          },
+          {
+            "task_switch_safe_implementation": 0.8089372854942979
+          },
+          {
+            "TMALI": 0.08051812566451025
+          },
+          {
+            "running_error_counter": 0.6971955923585246
+          }
+        ],
+        "score": 0.486,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.2",
+        "text": "The DPU - CCM shall provide a mechanism for other CSCs to report errors for inclusion in the DPU_HK .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.13.2.7",
+        "text": "Public Functions This routine gets housekeeping data stored for the TMALI CSC including some DCI parameters and resets the TMALI internal counters to zero . When the caller supplied pointer to a TMALI_HK structure is NIL no data is returned but the TMALI internal counters are still reset to zero.Two of the four error counters are updated within an ISR_context , this requires a task_switch_safe_implementation of these counters . Within VxWorks this could be solved using a counting semaphore . In the TMALI CSC design a faster method was used by using a free running_error_counter and a careful update of the reported number of errors , using an extra temporary variable . As the increment and assignment of the 32 bit unsigned integers themselves are \u2018 atomic \u2019 operations the resulting counters are task safe and no error events are lost . This means that the sum of the errors reported by the tmaliHkGet ( ) function is equal to the total numbers of errors that occurred , no error reports are lost due to the update of the internal structures .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.486,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "CCM",
+          "LAST_BOOT_IVEC_location",
+          "commandability",
+          "ground_communication",
+          "DPU"
+        ],
+        "terminology": [
+          "CCM",
+          "DPU"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "LAST_BOOT_IVEC_location": 0.7065757898819127
+          },
+          {
+            "commandability": 1.0
+          },
+          {
+            "ground_communication": 0.725418033158041
+          },
+          {
+            "DPU": 0
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "FSW",
+          "ccmErrEnq",
+          "ccmHkMkError",
+          "error_/_event_packet",
+          "CCM",
+          "ccmTask",
+          "CSC",
+          "DPU",
+          "Error_Collection",
+          "error_reporting_interface",
+          "SCUI"
+        ],
+        "terminology": [
+          "FSW",
+          "CCM",
+          "CSC",
+          "DPU",
+          "SCUI"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CCM": "Command and Control Module CSC"
+          },
+          {
+            "DPU": "Data Processing Unit"
+          },
+          {
+            "FSW": "Flight Software"
+          },
+          {
+            "CSC": "Computer Software Component"
+          },
+          {
+            "SCUI": "SCU Interface CSC"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "FSW": 0.4131515797638255
+          },
+          {
+            "ccmErrEnq": 0.37991150687880865
+          },
+          {
+            "ccmHkMkError": 1.0
+          },
+          {
+            "error_/_event_packet": 0.35160262236789097
+          },
+          {
+            "CCM": 0.11511827074916084
+          },
+          {
+            "ccmTask": 0.8043838599212754
+          },
+          {
+            "CSC": 0.16903681648595026
+          },
+          {
+            "DPU": 0
+          },
+          {
+            "Error_Collection": 0.4222584309098709
+          },
+          {
+            "error_reporting_interface": 0.3455874855841118
+          },
+          {
+            "SCUI": 0.6899557534394043
+          }
+        ],
+        "score": 0.484,
+        "links": [
+          {
+            "source": "CCM",
+            "target": "CCM",
+            "relationship": [
+              {
+                "concept_1": "CCM",
+                "relation_type": "synonym",
+                "concept_2": "CCM"
+              }
+            ]
+          },
+          {
+            "source": "DPU",
+            "target": "DPU",
+            "relationship": [
+              {
+                "concept_1": "DPU",
+                "relation_type": "synonym",
+                "concept_2": "DPU"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "SRS5.12.3.1",
+        "text": "The DPU - CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur . An unrecoverable software error is defined as an error that causes a loss of commandability or ground_communication .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "DPUSDS5.12.1.5.1",
+        "text": "Error_Collection and Reporting The DPU - CCM CSC provides a centralized error_reporting_interface , ccmErrEnq ( ) , that other FSW tasks use to report errors . Each time it wakes , ccmTask ( ) checks to see if it is time to form an error_/_event_packet for transmission to the ground . If so , ccmTask ( ) calls ccmHkMkError ( ) to actually create the packet and forward it to DPU - SCUI for transmission to the ground .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.484,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1683",
+        "text": "The system shall provide background checks on duplicate orders , drug_-_drug_interactions , and many other criteria that a user can choose .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "drug_-_drug_interactions"
+        ],
+        "terminology": [
+          "drug_-_drug_interactions"
+        ],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [
+          {
+            "drug_-_drug_interaction": "A drug - drug interaction may increase or decrease the effects of one or both drugs."
+          },
+          {
+            "drug_-_drug_interactions": "Drug - drug interactions should always be considered when prescribing multiple medications; this score does not include pharmacokinetic drug interactions."
+          }
+        ],
+        "importance_scores": [
+          {
+            "drug_-_drug_interaction": 0.28389667636905014
+          },
+          {
+            "drug_-_drug": 0.2253249989174913
+          },
+          {
+            "drug_-_drug_interactions": 0.28117117233563244
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "814",
+        "text": "The system shall provide the ability for the hospital to exclude therapeutic categories and drug_pairs from drug_-_drug_interaction and therapeutic overlap checking .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "drug_-_drug_interaction",
+          "drug_-_drug",
+          "drug_pairs"
+        ],
+        "terminology": [
+          "drug_-_drug_interaction"
+        ],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [
+          {
+            "drug_-_drug_interaction": "A drug - drug interaction may increase or decrease the effects of one or both drugs."
+          }
+        ],
+        "importance_scores": [
+          {
+            "drug_-_drug_interaction": 0.28389667636905014
+          },
+          {
+            "drug_-_drug": 0.2253249989174913
+          },
+          {
+            "drug_pairs": 0.6556387529293694
+          }
+        ],
+        "score": 0.996,
+        "links": [
+          {
+            "source": "drug_-_drug_interactions",
+            "target": "drug_-_drug_interaction",
+            "relationship": [
+              {
+                "concept_1": "drug_-_drug_interaction",
+                "relation_type": "synonym",
+                "concept_2": "drug_-_drug_interaction"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1683",
+        "text": "The system shall provide background checks on duplicate orders , drug_-_drug interactions , and many other criteria that a user can choose .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "814",
+        "text": "The system shall provide the ability for the hospital to exclude therapeutic categories and drug_pairs from drug_-_drug_interaction and therapeutic overlap checking .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.996,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1703",
+        "text": "The system shall document Discharge_Summary hospitalization data , as well as procedure and diagnosis - related information .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "data",
+          "Discharge_Summary"
+        ],
+        "terminology": [
+          "data",
+          "Discharge_Summary"
+        ],
+        "definitions": [
+          {
+            "Discharge_Summary": "Discharge summaries are summaries of a patient\u2019s medical care during a single hospitalization, including the pertinent diagnostic and therapeutic tests and procedures as well as the conclusions generated by those tests. They are required for all discharges and transfers from a VA medical center, domiciliary, or nursing home care. The automated Discharge Summary module of TIU provides an efficient and immediate mechanism for clinicians to capture transcribed patient discharge summaries online, where they\u2019re available for review, signing, adding addendum, etc."
+          },
+          {
+            "data": "A representation of facts, concepts, or instructions in a formalized manner for communication, interpretation, or processing by humans or by automatic means. The information you enter for the computer to store and retrieve. Characters stored in the computer system, which are the values of local or global variables. VA FileMan fields hold data values for file entries."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "data": 0.05475847022386125
+          },
+          {
+            "Discharge_Summary": 0.7804101080965784
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "693",
+        "text": "At discharge , the system shall provide the ability to communicate Discharge_Medications and allergies to the next provider of care .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Discharge_Medications"
+        ],
+        "terminology": [
+          "Discharge_Medications"
+        ],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [
+          {
+            "Discharge_Medications": "Discharge medications can be listed within discharge summaries (DS), patient discharge instructions (DI), or the electronically - generated discharge medication list (eDML) given to the patient in the after visit summary (AVS)."
+          }
+        ],
+        "importance_scores": [
+          {
+            "Discharge_Medications": 0.8677937115849179
+          }
+        ],
+        "score": 0.989,
+        "links": [
+          {
+            "source": "Discharge_Summary",
+            "target": "Discharge_Medications",
+            "relationship": [
+              {
+                "concept_1": "discharge_summary",
+                "relation_type": "listed_within",
+                "concept_2": "discharge_medication"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1703",
+        "text": "The system shall document Discharge_Summary hospitalization data , as well as procedure and diagnosis - related information .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "693",
+        "text": "At discharge , the system shall provide the ability to communicate Discharge_Medications and allergies to the next provider of care .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.989,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1737",
+        "text": "The document - handling system ( TIU ) shall include Consults_/_Request_Tracking , Discharge_Summary , and Progress Notes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "Consults_/_Request_Tracking",
+          "TIU",
+          "Discharge_Summary"
+        ],
+        "terminology": [
+          "TIU",
+          "Discharge_Summary"
+        ],
+        "definitions": [
+          {
+            "Discharge_Summary": "Discharge summaries are summaries of a patient\u2019s medical care during a single hospitalization, including the pertinent diagnostic and therapeutic tests and procedures as well as the conclusions generated by those tests. They are required for all discharges and transfers from a VA medical center, domiciliary, or nursing home care. The automated Discharge Summary module of TIU provides an efficient and immediate mechanism for clinicians to capture transcribed patient discharge summaries online, where they\u2019re available for review, signing, adding addendum, etc."
+          }
+        ],
+        "acronyms": [
+          {
+            "TIU": "Text Integration Utility"
+          }
+        ],
+        "contexts": [
+          {
+            "TIU": "Dr. Tiu does not have any insurances listed."
+          }
+        ],
+        "importance_scores": [
+          {
+            "Consults_/_Request_Tracking": 0.7604446011865171
+          },
+          {
+            "TIU": 0.7904579905025688
+          },
+          {
+            "Discharge_Summary": 0.7804101080965784
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "567",
+        "text": "The system shall send Current Medication List and Discharge_Medications ( patient home medications and medications prescribed upon discharge ) to outpatient_documentation_sources ( e.g. , Physicians office EMR ) , or Health Information Exchange ( HIE ) / network",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "outpatient_documentation_sources",
+          "EMR",
+          "Discharge_Medications"
+        ],
+        "terminology": [
+          "Discharge_Medications",
+          "EMR"
+        ],
+        "definitions": [
+          {
+            "EMR": "An EMR is an electronic medical record software package."
+          }
+        ],
+        "acronyms": [
+          {
+            "EMR": "Electronic Medical Records"
+          }
+        ],
+        "contexts": [
+          {
+            "Discharge_Medications": "Discharge medications can be listed within discharge summaries (DS), patient discharge instructions (DI), or the electronically - generated discharge medication list (eDML) given to the patient in the after visit summary (AVS)."
+          },
+          {
+            "EMR": "An EMR contains the patient\u2019s medical history, diagnoses and treatments by a particular physician, nurse practitioner, specialist, dentist, surgeon or clinic."
+          }
+        ],
+        "importance_scores": [
+          {
+            "outpatient_documentation_sources": 0.5067695027146754
+          },
+          {
+            "EMR": 0.8677937115849179
+          },
+          {
+            "Discharge_Medications": 0.8677937115849179
+          }
+        ],
+        "score": 0.96,
+        "links": [
+          {
+            "source": "Discharge_Summary",
+            "target": "Discharge_Medications",
+            "relationship": [
+              {
+                "concept_1": "discharge_summary",
+                "relation_type": "listed_within",
+                "concept_2": "discharge_medication"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1737",
+        "text": "The document - handling system ( TIU ) shall include Consults_/_Request_Tracking , Discharge_Summary , and Progress Notes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "567",
+        "text": "The system shall send Current Medication List and Discharge_Medications ( patient home medications and medications prescribed upon discharge ) to outpatient_documentation_sources ( e.g. , Physicians office EMR ) , or Health Information Exchange ( HIE ) / network",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.96,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1691",
+        "text": "The system shall use HL - 7 communications protocol for transferring messages among packages",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "protocol"
+        ],
+        "terminology": [
+          "protocol"
+        ],
+        "definitions": [
+          {
+            "protocol": "A set of procedures for establishing and controlling data transmission.\nEntry in the PROTOCOL file (#101). Used by the Order Entry/Results Reporting (OE/RR) package to support the ordering of medical tests and other activities."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "protocol": 0.5608202161931569
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "641",
+        "text": "The HIE SHALL have the ability to perform the roles of Document_Consumer , Document Source , Document Repository , Document Registry and Patient_Identity_Source as documented in HITSP transaction package 13 Manage Sharing of Documents , as updated in 2007 IHE_XDS - b and IHE XCA , and using HITSP Component 32 Registration Summary and Medication History for the specification of the HL7 / ASTM Continuity of Care_Document ( CCD ) healthcare_summary_document , as updated by HITSP in 2007 .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "HITSP",
+          "transaction",
+          "IHE",
+          "Patient_Identity_Source",
+          "IHE_XDS",
+          "XCA",
+          "Document_Consumer",
+          "package",
+          "HIE",
+          "XDS",
+          "healthcare_summary_document",
+          "ASTM",
+          "Care_Document"
+        ],
+        "terminology": [
+          "HITSP",
+          "transaction",
+          "IHE",
+          "IHE_XDS",
+          "XCA",
+          "package",
+          "HIE",
+          "XDS",
+          "ASTM"
+        ],
+        "definitions": [
+          {
+            "IHE_XDS": "IHE XDS is an architectural approach which separates the management of documents (well, any kind of data blob, really) from the management of metadata"
+          },
+          {
+            "package": "A set of MUMPS routines, files, documentation and installation procedures that support a specific function within DHCP."
+          },
+          {
+            "transaction": "the transmission of information between two parties to carry out financial or administrative activities related to health care. It includes the following types of information transmissions:\n(1) Health care claims or equivalent encounter information.\n(2) Health care payment and remittance advice.\n(3) Coordination of benefits.\n(4) Health care claim status.\n(5) Enrollment and disenrollment in a health plan.\n(6) Eligibility for a health plan.\n(7) Health plan premium payments.\n(8) Referral certification and authorization.\n(9) First report of injury.\n(10) Health claims attachments.\n(11) Other transactions that the Secretary may prescribe by regulation."
+          }
+        ],
+        "acronyms": [
+          {
+            "IHE": "Integrating the Healthcare Enterprise"
+          },
+          {
+            "HITSP": "Healthcare Information Technology Standards Panel"
+          },
+          {
+            "HIE": "Health Information Exchange"
+          }
+        ],
+        "contexts": [
+          {
+            "XDS": "XDS provides a registry for querying which patient records are in an EHR repository and methods for retrieving the documents."
+          },
+          {
+            "IHE_XDS": "IHE XDS Provide & Registry"
+          },
+          {
+            "ASTM": "ASTM Provides Means for Healthcare Workers to Collect and Transfer Patient Data"
+          },
+          {
+            "XCA": "XCA provides access to all medical data including diagnostic reports and imaging manifests."
+          }
+        ],
+        "importance_scores": [
+          {
+            "HITSP": 0.19802486293472754
+          },
+          {
+            "transaction": 0.693026504608239
+          },
+          {
+            "IHE": 0.45961170872372653
+          },
+          {
+            "Patient_Identity_Source": 0.5817057773176827
+          },
+          {
+            "IHE_XDS": 0.5011265471989547
+          },
+          {
+            "XCA": 0.5809159810051379
+          },
+          {
+            "Document_Consumer": 0.5102159624584417
+          },
+          {
+            "package": 0
+          },
+          {
+            "HIE": 0.14820235394574538
+          },
+          {
+            "XDS": 0.542641385674183
+          },
+          {
+            "healthcare_summary_document": 0.4969689438491638
+          },
+          {
+            "ASTM": 0.7904579905025688
+          },
+          {
+            "Care_Document": 0.6637027101543223
+          }
+        ],
+        "score": 0.993,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1691",
+        "text": "The system shall use HL - 7 communications protocol for transferring messages among packages",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "641",
+        "text": "The HIE SHALL have the ability to perform the roles of Document_Consumer , Document Source , Document Repository , Document Registry and Patient_Identity_Source as documented in HITSP transaction package 13 Manage Sharing of Documents , as updated in 2007 IHE_XDS - b and IHE XCA , and using HITSP Component 32 Registration Summary and Medication History for the specification of the HL7 / ASTM Continuity of Care_Document ( CCD ) healthcare_summary_document , as updated by HITSP in 2007 .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.993,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1701",
+        "text": "The system shall support requirements for codified data , including diagnosis data using ICD_-_9_codes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "ICD_-_9_codes"
+        ],
+        "terminology": [
+          "ICD_-_9_codes"
+        ],
+        "definitions": [
+          {
+            "ICD_-_9_codes": "ICD - 9 codes are only 3\u20134 digits, all numbers."
+          }
+        ],
+        "acronyms": [
+          {
+            "ICD_-_9_codes": "ICN"
+          }
+        ],
+        "contexts": [
+          {
+            "ICD_-_9_codes": "ICD - 9 codes have been used mainly for billing, historically."
+          }
+        ],
+        "importance_scores": [
+          {
+            "ICD_-_9_codes": 0.521353761891956
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "66",
+        "text": "The system shall have the ability to provide assistance with selecting an appropriate CPT Evaluation and Management_billing_code based on codified clinical information in the encounter .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Management_billing_code",
+          "CPT"
+        ],
+        "terminology": [
+          "CPT"
+        ],
+        "definitions": [],
+        "acronyms": [
+          {
+            "CPT": "Current Procedural Terminology"
+          }
+        ],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "Management_billing_code": 0.720610654003425
+          },
+          {
+            "CPT": 0.5809159810051379
+          }
+        ],
+        "score": 0.989,
+        "links": [
+          {
+            "source": "ICD_-_9_codes",
+            "target": "Management_billing_code",
+            "relationship": [
+              {
+                "concept_1": "icd_-_9_code",
+                "relation_type": "been_used",
+                "concept_2": "billing"
+              },
+              {
+                "concept_1": "billing",
+                "relation_type": "match",
+                "concept_2": "management_billing_code"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1701",
+        "text": "The system shall support requirements for codified data , including diagnosis data using ICD_-_9_codes .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "66",
+        "text": "The system shall have the ability to provide assistance with selecting an appropriate CPT Evaluation and Management_billing_code based on codified clinical information in the encounter .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.989,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1689",
+        "text": "The system shall allow multiple use and integration of information , including cutting and pasting among components , boilerplate_capabilities , templates , etc. , thus decreasing the amount of duplicate entry of data .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "boilerplate_capabilities"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "boilerplate_capabilities": 0.7630227068362023
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "201",
+        "text": "The system shall provide the ability to generate and format CCD documents with narrative sections and structured entries ( discrete fields ) as specified by the HITSP IS03 / C32 specification of the Registration_Information_module_subset . For 2008 , the values within the structured entries do not have to use industry_standard_vocabularies_/_terminologies ( such as RxNorm or SNOMED - CT )",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "CT",
+          "HITSP",
+          "SNOMED",
+          "Registration_Information_module_subset",
+          "industry_standard_vocabularies_/_terminologies",
+          "C32",
+          "CCD"
+        ],
+        "terminology": [
+          "CT",
+          "HITSP",
+          "CCD",
+          "SNOMED"
+        ],
+        "definitions": [
+          {
+            "CCD": "CCD is an attempt to meld CCR with HL7 standards for data exchange\u201d \u2013 jd"
+          }
+        ],
+        "acronyms": [
+          {
+            "HITSP": "Healthcare Information Technology Standards Panel"
+          },
+          {
+            "CCD": "Continuity of Care Document"
+          },
+          {
+            "CT": "computed tomography"
+          },
+          {
+            "SNOMED": "software"
+          }
+        ],
+        "contexts": [
+          {
+            "CCD": "CCD provides a consolidated, single standard for clinical documents in the healthcare community."
+          },
+          {
+            "SNOMED": "SNOMED has an expression language that allows to define more specific concepts based on existing ones."
+          }
+        ],
+        "importance_scores": [
+          {
+            "CT": 0.5809159810051379
+          },
+          {
+            "HITSP": 0.19802486293472754
+          },
+          {
+            "SNOMED": 0.5608202161931569
+          },
+          {
+            "Registration_Information_module_subset": 0.5115884804541078
+          },
+          {
+            "industry_standard_vocabularies_/_terminologies": 0.4797618997299811
+          },
+          {
+            "C32": 0.4019566633740334
+          },
+          {
+            "CCD": 0.4104350972591009
+          }
+        ],
+        "score": 0.99,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1689",
+        "text": "The system shall allow multiple use and integration of information , including cutting and pasting among components , boilerplate_capabilities , templates , etc. , thus decreasing the amount of duplicate entry of data .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "201",
+        "text": "The system shall provide the ability to generate and format CCD documents with narrative sections and structured entries ( discrete fields ) as specified by the HITSP IS03 / C32 specification of the Registration_Information_module_subset . For 2008 , the values within the structured entries do not have to use industry_standard_vocabularies_/_terminologies ( such as RxNorm or SNOMED - CT )",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.99,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1694",
+        "text": "The system shall have pre-defined progress_note_templates .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "progress_note_templates"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "progress_note_templates": 0.46485612549213157
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "74",
+        "text": "The system shall provide a method for archiving health record information .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "record"
+        ],
+        "terminology": [
+          "record"
+        ],
+        "definitions": [
+          {
+            "record": "Set of related data treated as a unit. An entry in a VA FileMan file constitutes a record. A collection of data items that refer to a specific entity (e.g., in a name-address-phone number file, each record would contain a collection of data relating to one person)."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "record": 0.10346160186734002
+          }
+        ],
+        "score": 0.0006,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1694",
+        "text": "The system shall have pre-defined progress_note_templates .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "74",
+        "text": "The system shall provide a method for archiving health record information .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.0006,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1693",
+        "text": "The system shall support the Ambulatory_Care_Date Capture project for capturing encounter data for workload credit , as well as capturing clinically relevant data for reminders and reports",
+        "query": "source",
+        "type": "R1",
+        "concepts": [
+          "Ambulatory_Care_Date"
+        ],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "Ambulatory_Care_Date": 0.8095379759260249
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "id": "71",
+        "text": "The system shall include standard medication_codes associated with each medication in the list for medications in the vendor - provided medication database .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "database",
+          "medication_codes"
+        ],
+        "terminology": [
+          "database"
+        ],
+        "definitions": [
+          {
+            "database": "A set of data, consisting of at least one file, that is sufficient for a given purpose. The VistA database is composed of a number of VA FileMan files. A collection of data about a specific subject, such as the PATIENT file (#2); a data collection has different data fields (e.g. patient name, SSN, Date of Birth, and so on). An organized collection of data about a particular topic."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "database": 0.7355874231698355
+          },
+          {
+            "medication_codes": 0.3124691667381902
+          }
+        ],
+        "score": 0.0003,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1693",
+        "text": "The system shall support the Ambulatory_Care_Date Capture project for capturing encounter data for workload credit , as well as capturing clinically relevant data for reminders and reports",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "71",
+        "text": "The system shall include standard medication_codes associated with each medication in the list for medications in the vendor - provided medication database .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.0003,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1690",
+        "text": "The system shall be easy to use by improving the user interface to reflect industry standards and principles of usability and user - centered design .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "65",
+        "text": "The system shall have the ability to provide access to test and Procedure instructions that can be customized by the physician or health organization . These instructions may reside within the system or be provided through links to external sources .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "Procedure"
+        ],
+        "terminology": [
+          "Procedure"
+        ],
+        "definitions": [
+          {
+            "Procedure": "A test or action done for or to a patient that can be coded with the CPT coding process."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [
+          {
+            "Procedure": 0.8677937115849179
+          }
+        ],
+        "score": 0.0005,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1690",
+        "text": "The system shall be easy to use by improving the user interface to reflect industry standards and principles of usability and user - centered design .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "65",
+        "text": "The system shall have the ability to provide access to test and Procedure instructions that can be customized by the physician or health organization . These instructions may reside within the system or be provided through links to external sources .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.0005,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1695",
+        "text": "The system shall allow creation of personalized templates to fit the specific needs of individual practices .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "68",
+        "text": "The system shall have the ability to provide filtered displays of encounters based on encounter_characteristics , including date of service , encounter provider and associated diagnosis .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [
+          "encounter_characteristics",
+          "encounter",
+          "provider"
+        ],
+        "terminology": [
+          "encounter_characteristics",
+          "encounter",
+          "provider"
+        ],
+        "definitions": [
+          {
+            "encounter": "A contact between a patient and a provider who has the primary responsibility of assessing and treating the patient. A patient may have multiple encounters per visit. Outpatient encounters include scheduled appointments and walk-in unscheduled visits. A clinician\u2019s telephone communications with a patient may be represented by a separate visit entry. If the patient is seen in an outpatient clinic while an inpatient, this is treated as a separate encounter.\nprovider\nvisit"
+          },
+          {
+            "provider": "The actual provider of care performing the procedure. This provider can be a doctor, nurse, technician, or any designated team of medical professionals.\nThe entity that furnishes health care to consumers. An individual or defined group of individuals who provide a defined unit of health care services (defined = codable) to one or more individuals at a single session.\nHealth Care Provider\nUnder HIPAA, this is \"\u2026a provider of services as defined in the section 1861(u) of the [Social Security] Act, 42 USC 1395x(u), a provider of medical or other health services as defined in section 1861(s) of the Act, 42 USC 1395(s), and any other person or organization who furnishes, bills, or is paid for health care in the normal course of business.\" [45 CFR 160.103]\nmeans a provider of services (as defined in section 1861(u) of the Act, 42 U.S.C. 1395x(u)), a provider of medical or health services (as defined in section 1861(s) of the Act, 42 U.S.C. 1395x(s)), and any other person or organization who furnishes, bills, or is paid for health care in the normal course of business."
+          }
+        ],
+        "acronyms": [],
+        "contexts": [
+          {
+            "encounter_characteristics": "Encounter characteristics (setting, provider, medications, and procedures) are reported in ."
+          }
+        ],
+        "importance_scores": [
+          {
+            "encounter_characteristics": 0.7052175486295504
+          },
+          {
+            "encounter": 0.4104350972591009
+          },
+          {
+            "provider": 0.27822880884401874
+          }
+        ],
+        "score": 0.0006,
+        "links": []
+      }
+    ]
+  },
+  {
+    "source": [
+      {
+        "id": "1695",
+        "text": "The system shall allow creation of personalized templates to fit the specific needs of individual practices .",
+        "query": "source",
+        "type": "R1",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": []
+      }
+    ],
+    "target": [
+      {
+        "id": "68",
+        "text": "The system shall have the ability to provide filtered displays of encounters based on encounter_characteristics , including date of service , encounter provider and associated diagnosis .",
+        "query": "target",
+        "type": "R2",
+        "concepts": [],
+        "terminology": [],
+        "definitions": [],
+        "acronyms": [],
+        "contexts": [],
+        "importance_scores": [],
+        "score": 0.0006,
+        "links": []
+      }
+    ]
+  }
+]

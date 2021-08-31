@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trace</title>
+    <!--Import Google Icon Font-->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--Import materialize.css-->
+    <!--<link rel="stylesheet" href="../static/css/materialize.min.css">-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../static/js/pagination.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/myStyles2.css" />
+
+</head>
+
+<body class = 'blue-grey lighten-5' >
+
+
+
+
+
+<div class="row">
+
+    <div class = "artifact-panels col s12">
+
+        <div class="content-panel col s4">
+            <div  class="art_contents content-panel-style" style="background-color: white">
+                <a style="margin-top: -18px" class="waves-effect waves-light blue-grey lighten-4 dim-grey-text btn-small artifact-type disabled"><b>Source:</b> <span id="source_art_name"></span></a>
+                <!--<a id="source_art_type" style="margin-top: -18px" class="btn btn-small type_btn tooltip_ score-btn" style="background-color: white; cursor: unset; box-shadow: none; color: black;">Source Artifact</a>-->
+                <button type="button" class="btn btn-small type_btn tooltip_" style="margin-top: -18px; background-color: white; cursor: unset; box-shadow: none; color: black; "><b>Type: </b> <span id="source_type">R1</span><span class="tooltiptext_" id="source_type_text" style="text-transform: capitalize"></span></button>
+
+                <p id = "source_artifact">
+                    The system shall be accessible to color blind users.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="relationship-panel  col s3">
+            <div class="information-panel">
+                <div class="information-panel-content" id = "relationship_update" >
+                </div>
+            </div>
+            <!--<br>-->
+            <div id="tree"></div>
+        </div>
+
+
+
+        <div class="content-panel col s5"  >
+            <div class="content-panel-style2 " style="margin-top: 10px; margin-left: 0px;">
+                <table cellpadding="1" cellspacing="1" class="table table-hover" id="myTable">
+                    <colgroup>
+                        <col span="1" style="width: 75%;">
+                        <col span="1" style="width: 25%;">
+                    </colgroup>
+
+                    <tbody class="eachTarget_artifact">
+                    <tr id="currently_clicked_target" class="collapsible_ active" style="background-color: white; display: table-row; ">
+                        <td>
+                            <div>
+                                <div class="action_btn" style="margin-top: 12px; margin-bottom: 12px;">
+                                    <a class="targ_art_name_ waves-effect waves-light blue-grey lighten-3 dim-grey-text btn-small artifact-type collapsible_new disabled" style="color: black; margin-left: 10px;"><b>Target:</b> <span id="targ_art_name" ></span> </a>
+
+                                    <!--Target score-->
+                                    <!--<button type="button" class="btn btn-small score_btn" id="target_score_btn" style="background-color: white; cursor: unset; box-shadow: none; color: black;">-->
+                                    <!--<b>Score: </b>0.2</button>-->
+
+
+                                    <button type="button" class="btn btn-small score_btn" style="background-color: white; cursor: unset; box-shadow: none;
+                                    display: none; color: black; "><b>Score: </b> <span id="target_score_btn" ></span></button>
+
+
+                                    <!--Target type Aim to spell in full-->
+                                    <button type="button" class="btn btn-small type_btn tooltip_" style="background-color: white; cursor: unset; box-shadow: none; color: black; "><b>Type: </b> <span id="targ_type">D1</span><span class="tooltiptext_" id="targ_type_text" style="text-transform: capitalize"></span></button>
+
+                                    <button type="button" class="btn btn-small" style="background-color: white; display: none; cursor: unset; box-shadow: none; color: black; "><b>ID: </b><span id="art_num_"></span></button>
+
+                                </div>
+                                <!--<p class="art_summary" style="display: none; font-size: 0.9em; padding: 10px; margin-left: 20px;">The system shall provide the ability to receive and store general laboratory results (includes ability to differentiate preliminary results and final results and the ability to process a corrected result)...</p>-->
+                            </div>
+                        </td>
+                        <td>
+                            <div id="row1_vote" style="font-size: 0.8em; display:inline-block; padding:7px;">
+                                <label>
+                                    <input name="group1" type="radio" checked="">
+                                    <span style="color: black">Correct</span>
+                                </label>
+                                <label>
+                                    <input name="group1" type="radio">
+                                    <span style="color: black">Incorrect</span>
+                                </label>
+                                <label>
+                                    <input name="group1" type="radio">
+                                    <span style="color: black">Don't know</span>
+                                </label>
+                                <button class="btn-small " id="artifact_num" type="submit">Submit
+                                    <!--<i class="material-icons right">send</i>-->
+                                    <!--<a href="javascript:;;" class="waves-effect waves-light green dim-grey-text" id="artifact_num" style="color: black; margin-left: 10px;">SUBMIT</a>-->
+
+                                </button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="collapse-content" id="row1_content" style="background-color: white;">
+                        <td>
+                            <div id="target_content_data" class="collapsed_content_data" style="display: block; overflow: scroll; padding: 10px; color: black; background-color: rgb(236, 239, 241);">
+                                The UI configurator shall provide the option of a colorblind-friendly palette.
+                            </div>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+                <!--<form id="myform" action="">-->
+
+                <!--</form>-->
+
+            </div>
+            <!--<div>-->
+            <!--<button class="btn " id="artifact_num" type="submit">Submit-->
+            <!--&lt;!&ndash;<i class="material-icons right">send</i>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="javascript:;;" class="waves-effect waves-light green dim-grey-text" id="artifact_num" style="color: black; margin-left: 10px;">SUBMIT</a>&ndash;&gt;-->
+
+            <!--</button>-->
+            <!--</div>-->
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+</body>
+
+
+<script src="https://unpkg.com/d3@6.6.1/dist/d3.min.js"></script>
+<script>
+
+    var Nodes = [];
+    var Definitions_ = [];
+    var Acronyms_ = [];
+    var Contexts_ = [];
+    var links = [];
+    var lvlCount = 0;
+    var numArtifacts = 4;
+    var filtered_source_concepts = [];
+    var filtered_target_concepts = [];
+    var source;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    source = +document.getElementById("art_num_").textContent;
+    var data_ = [{"id": 4}, {"id": 9}, {"id": 8}, {"id": 90}, {"id": 900}, {"id": 41900}];
+
+
+    var width = Math.round(screen.width * 25 / 100),
+        height = 500,
+        boxWidth = Math.round(width / 4),
+        boxHeight = height/7.25,
+        margin = {
+            top: 16,
+            right: width/8,
+            bottom: 16,
+            left: width/20
+        },
+
+        gap = {
+            width: boxWidth * 2,
+            height: 20
+        },
+        svg;
+
+
+    var diagonal = d3.linkHorizontal()
+        .x(function(d) {
+            return d.y;
+        })
+        .y(function(d) {
+            return d.x;
+        });
+
+    svg = d3.select("#tree").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g");
+
+
+    // function updateValue(){
+    //     const queryString = window.location.href;
+    //     var url = new URL(queryString);
+    //     var search_params = url.searchParams;
+    //     var n_val = list_of_nums.pop();
+    //     search_params.set('val', n_val);
+    //
+    //     url.search = search_params.toString();
+    //
+    //     var new_url = url.toString();
+    //     location.replace(new_url);
+    //
+    //
+    //     console.log(new_url);
+    // }
+
+
+
+
+
+    function drawSource(data, val){
+
+        data.forEach(d => {
+            d.source.forEach(k => {
+                data_.push({"id": k.id});
+            })
+
+        });
+
+
+        Nodes = [];
+
+        // console.log("Just checking things here", nextArtifactNum)
+        // var x = document.getElementById("artifacts_num").value;
+        var source_data = [data[val].source[0]];
+
+        var source_ = +document.getElementById("art_num_").textContent;
+        // console.log("ooo plsss", source_);
+        var artifact_data = {
+            "info": []
+        };
+
+        var concept_definitions_ = [];
+        var concept_acronyms_ = [];
+        var concept_contexts_ = [];
+        var source_nodes = [];
+        const concept_importance_scores_ = [];
+
+        source_data.forEach(function (d) {
+            artifact_data["info"].push({"aid": d["id"], "content": d["text"], "type": d["type"]});
+
+
+            d['definitions'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_definitions_.push({"name": key, "definition": value});
+                    Definitions_.push({"name": key,
+                        "definition" : value});
+                }
+            });
+
+            d['acronyms'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_acronyms_.push({"name": key, "acronym": value});
+                    Acronyms_.push({"name": key,
+                        "acronym" : value});
+                }
+
+            });
+
+            d['contexts'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_contexts_.push({"name": key, "context": value});
+                    Contexts_.push({"name": key,
+                        "context" : value});
+                }
+            });
+
+
+            d["concepts"].forEach(c => {
+                source_nodes.push({"lvl": 0, "name": c, "type": "source"});
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_importance_scores_.push({"name": key, "imp_score": value})
+                }
+
+
+            });
+        });
+
+
+        // Draw the raw data on the source artifact panel
+        document.getElementById("source_artifact").textContent = artifact_data.info[0].content;
+        document.getElementById("source_art_name").textContent = artifact_data.info[0].aid;
+
+        var str = artifact_data.info[0].type;
+        var matches = str.match(/\b(\w)/g); // ['J','S','O','N']
+        var acronym = matches.join(''); // JSON
+        document.getElementById("source_type").textContent = artifact_data.info[0].type;
+        document.getElementById("source_type_text").textContent = artifact_data.info[0].type;
+
+        "use strict";
+        var count = [];
+
+        source_nodes.forEach(function (d) {
+            count[d.lvl] = 0;
+        });
+
+        lvlCount = count.length;
+
+        source_nodes.forEach(function (d, i) {
+            if (d.lvl === 0){
+                d.x = margin.left + d.lvl * (boxWidth + gap.width);
+            }
+            else {
+                d.x = d.lvl * (boxWidth + gap.width) - margin.right;
+            }
+            d.y = margin.top + (boxHeight + gap.height) * count[d.lvl];
+            d.cl =  colors(stemmer(d.name)); //getUniqueColors(d.name, data_concepts_unique);
+            d.definition = conceptDef(d.name, concept_definitions_);
+            d.acronym = conceptAcr(d.name, concept_acronyms_);
+            d.context = conceptContxt(d.name, concept_contexts_);
+            d.imp_score = conceptImportanceScores(d.name, concept_importance_scores_);
+            d.id = "n" + i;
+            count[d.lvl] += 1;
+            Nodes.push(d);
+        });
+
+        // console.log("the nodes s", Nodes)
+
+        var source_concepts = [];
+
+        var importance_scores_source_concepts = [];
+        var has_source_terminologies = [];
+
+
+
+        source_data.forEach(function (d) {
+            d["terminology"].forEach(k => {
+                has_source_terminologies.push(k);
+            });
+
+            var source_nodes = d['concepts'];
+            source_nodes.forEach(c => {
+                source_concepts.push(c)
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    importance_scores_source_concepts.push({"name": key, "imp_score": value})
+                }
+            });
+        });
+
+
+        var s_orig_content = artifact_data['info'][0].content;
+        //
+        var split_source_words = s_orig_content.split(" ");
+        for (var i = 0; i < split_source_words.length; i++) {
+            var sourceWord = split_source_words[i].replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"");
+            // console.log("my source word", sourceWord)
+            if (source_concepts.includes(sourceWord)) {
+                var imp_score_s = conceptImportanceScores(sourceWord, importance_scores_source_concepts);
+                var text_decor;
+
+
+                if (has_source_terminologies.includes(sourceWord)){
+                    text_decor = "underline";
+                }
+                else {
+                    text_decor = "none"
+                }
+
+                split_source_words[i] = "<a href='JAVASCRIPT:;;' style='color: black; text-decoration:"+text_decor+"; text-decoration-style: dotted;' onmouseout='urlMouseAction_leave(this)' onmouseover='urlMouseAction(this)'><span class='"+sourceWord+"_s' " +
+                    "style='font-size:" + (1 + (imp_score_s * 1.5)) +"em'>"  +  split_source_words[i].replaceAll("_", " ")  + "</span></a>";
+
+
+                var new_s = split_source_words.join(" ");
+
+                d3.select("#source_artifact")
+                    .html(new_s);
+            }
+
+
+        }
+
+
+
+    }
+
+    function drawTargets(data, val) {
+
+        // Nodes = [];
+
+        var target_data = data[val].target;
+
+
+        var artifact_data = {
+            "info": []
+        };
+
+        var concept_definitions_ = [];
+        var concept_acronyms_ = [];
+        var concept_contexts_ = [];
+        var target_nodes = [];
+        const concept_importance_scores_ = [];
+
+
+        target_data.forEach(function (d) {
+            artifact_data["info"].push({"aid": d["id"], "content": d["text"], "score": d["score"], "type": d["type"]});
+
+
+            d['definitions'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_definitions_.push({"name": key, "definition": value});
+                    Definitions_.push({"name": key,
+                        "definition" : value});
+                }
+            });
+
+            d['acronyms'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_acronyms_.push({"name": key, "acronym": value});
+                    Acronyms_.push({"name": key,
+                        "acronym" : value});
+                }
+            });
+
+            d['contexts'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_contexts_.push({"name": key, "context": value});
+                    Contexts_.push({"name": key,
+                        "context" : value});
+                }
+            });
+
+
+            d["concepts"].forEach(c => {
+                target_nodes.push({"lvl": 0, "name": c, "type": "target"});
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_importance_scores_.push({"name": key, "imp_score": value})
+                }
+
+
+            });
+        });
+        console.log("This is the target data", artifact_data.info);
+
+
+        // // Draw the raw data on the source artifact panel
+        document.getElementById("target_content_data").textContent = artifact_data.info[0].content;
+        document.getElementById("targ_art_name").textContent = artifact_data.info[0].aid;
+        document.getElementById("target_score_btn").textContent = artifact_data.info[0].score;
+        document.getElementById("targ_type").textContent = artifact_data.info[0].type;
+        document.getElementById("targ_type_text").textContent = artifact_data.info[0].type;
+
+
+        "use strict";
+        var count = [];
+
+        target_nodes.forEach(function (d) {
+            count[d.lvl] = 0;
+        });
+
+        lvlCount = count.length;
+
+        target_nodes.forEach(function (d, i) {
+            if (d.lvl === 0){
+                d.x = margin.left + d.lvl * (boxWidth + gap.width);
+            }
+            else {
+                d.x = d.lvl * (boxWidth + gap.width) - margin.right;
+            }
+            d.y = margin.top + (boxHeight + gap.height) * count[d.lvl];
+            d.cl =  colors(stemmer(d.name)); //getUniqueColors(d.name, data_concepts_unique);
+            d.definition = conceptDef(d.name, concept_definitions_);
+            d.acronym = conceptAcr(d.name, concept_acronyms_);
+            d.context = conceptContxt(d.name, concept_contexts_);
+            d.imp_score = conceptImportanceScores(d.name, concept_importance_scores_);
+            d.id = "n" + i;
+            count[d.lvl] += 1;
+            Nodes.push(d);
+        });
+
+        // console.log(Nodes, "THE NODES");
+
+        var target_concepts = [];
+
+        var importance_scores_target_concepts = [];
+        var has_target_terminologies = [];
+
+
+
+        target_data.forEach(function (d) {
+            d["terminology"].forEach(k => {
+                has_target_terminologies.push(k);
+            });
+
+            var target_nodes = d['concepts'];
+            target_nodes.forEach(c => {
+                target_concepts.push(c)
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    importance_scores_target_concepts.push({"name": key, "imp_score": value})
+                }
+            });
+        });
+
+
+
+        var t_orig_content = artifact_data['info'][0].content;
+        //
+        var split_target_words = t_orig_content.split(" ");
+        for (var i = 0; i < split_target_words.length; i++) {
+            var targetWord = split_target_words[i].replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"");
+            if (target_concepts.includes(targetWord)) {
+                var imp_score_t = conceptImportanceScores(targetWord, importance_scores_target_concepts);
+                var text_decor;
+
+
+                if (has_target_terminologies.includes(targetWord)){
+                    text_decor = "underline";
+                }
+                else {
+                    text_decor = "none"
+                }
+
+
+                split_target_words[i] = "<a href='JAVASCRIPT:;;' style='color: black; text-decoration:"+text_decor+"; text-decoration-style: dotted;' onmouseout='urlMouseAction_leave(this)' onmouseover='urlMouseAction(this)'><span class='"+targetWord+"_s' " +
+                    "style='font-size:" + (1 + (imp_score_t * 1.5)) +"em'>"  +  split_target_words[i].replaceAll("_", " ")  + "</span></a>";
+
+
+                var new_t = split_target_words.join(" ");
+
+                d3.select("#target_content_data")
+                    .html(new_t);
+            }
+
+
+        }
+
+
+
+        //Start coloring things!
+
+        var data_node_links_ = {
+            "Nodes": [],
+            "links": []
+        };
+
+
+        var source_data = data[val].source;
+        var all_data_concepts_ = [];
+
+        source_data.forEach(function (d) {
+            var source_nodes = d['concepts'];
+            source_nodes.forEach(c => {
+                data_node_links_["Nodes"].push({"lvl": 0, "name": c, "type": "source"});
+                all_data_concepts_.push(c)
+            });
+
+        });
+
+
+        var source_linked_to = [];
+        var target_linked_to = [];
+
+        target_data.forEach(function (d) {
+            var target_nodes = d['concepts'];
+            target_nodes.forEach(c => {
+                data_node_links_["Nodes"].push({"lvl": 1, "name": c, "type": "target"});
+                all_data_concepts_.push(c)
+            });
+            d['links'].forEach(l => {
+                data_node_links_["links"].push(l);
+                source_linked_to.push(l['source']);
+                target_linked_to.push(l['target']);
+            })
+
+        });
+
+
+        const all_unique_concepts = [...new Set(all_data_concepts_)];
+        all_unique_concepts.sort();
+
+
+        // const concept_definitions_ = [];
+        // const concept_importance_scores_ = [];
+        var has_source_definitions = [];
+        var has_target_definitions = [];
+        var has_source_terminologies = [];
+        var has_target_terminologies = [];
+
+        source_data.forEach(function (d) {
+            var terminology = d["terminology"];
+            d["terminology"].forEach(d => {
+                has_source_terminologies.push(d)
+            });
+
+            d['definitions'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_definitions_.push({"name": key, "definition": value});
+                    has_source_definitions.push(key);
+                    // filtered_source_concepts.append(key);
+
+                }
+            });
+
+            d['acronyms'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_acronyms_.push({"name": key, "acronym": value});
+                    Acronyms_.push({"name": key,
+                        "acronym" : value});
+                }
+            });
+
+            d['contexts'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_contexts_.push({"name": key, "context": value});
+                    Contexts_.push({"name": key,
+                        "context" : value});
+                }
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_importance_scores_.push({"name": key, "imp_score": value});
+
+                }
+
+            });
+
+
+        });
+
+
+        target_data.forEach(function (d) {
+            var terminology = d["terminology"];
+            d["terminology"].forEach(d => {
+                has_target_terminologies.push(d)
+            });
+
+
+            d['definitions'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_definitions_.push({"name": key, "definition": value})
+                    has_target_definitions.push(key);
+                }
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    concept_importance_scores_.push({"name": key, "imp_score": value})
+                }
+
+            });
+
+        });
+
+
+        //Highlight the important words in the source artifact
+        // var source_data = [data[val].source[0]];
+        var source_concepts = [];
+
+        var importance_scores_source_concepts = [];
+
+
+
+        source_data.forEach(function (d) {
+            var source_nodes = d['concepts'];
+            source_nodes.forEach(c => {
+                source_concepts.push(c)
+            });
+
+            d['importance_scores'].forEach(function (k) {
+                for (const [key, value] of Object.entries(k)) {
+                    importance_scores_source_concepts.push({"name": key, "imp_score": value})
+                }
+            });
+        });
+
+
+        // Highlight source words
+        var s_orig_content = source_data[0].text;
+        filtered_source_concepts = [];
+        filtered_target_concepts = [];
+
+        var split_source_words = s_orig_content.split(" ");
+        for (var i = 0; i < split_source_words.length; i++) {
+            var sourceWord = split_source_words[i].replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"");
+            if (source_concepts.includes(sourceWord)) {
+                // var imp_score_s = conceptImportanceScores(sourceWord, importance_scores_source_concepts);
+                if (source_linked_to.includes(sourceWord)) {
+
+                    filtered_source_concepts.push(sourceWord);
+                    document.getElementsByClassName(sourceWord+"_s")[0].style.backgroundColor = colors(stemmer(sourceWord));
+                }
+
+
+            }
+
+
+
+        }
+
+
+        //Highlight the important words in the clicked target artifact ronald
+
+        var split_target_words = t_orig_content.split(" ");
+        for (var i = 0; i < split_target_words.length; i++) {
+            var targetWord = split_target_words[i].replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"");
+            if (target_concepts.includes(targetWord)) {
+                var imp_score_t = conceptImportanceScores(targetWord, importance_scores_target_concepts);
+                var colorToUse, text_decor, tex;
+                if (target_linked_to.includes(targetWord)) {
+                    filtered_target_concepts.push(targetWord);
+                    colorToUse = colors(stemmer(targetWord));
+
+                }
+                else {
+                    colorToUse = "none";
+                }
+
+                if (has_target_terminologies.includes(targetWord)){
+                    text_decor = "underline";
+                }
+                else {
+                    text_decor = "none"
+                }
+
+
+                // "+text_decor+"
+                split_target_words[i] = "<a href='JAVASCRIPT:;;' style='color: black; text-decoration:"+text_decor+"; text-decoration-style: dotted;' onmouseout='urlMouseAction_leave(this)' onmouseover='urlMouseAction(this)'><span class='" + targetWord + "_t' " +
+                    "style='background-color:" + colorToUse + ";font-size:" + (1 + (imp_score_t * 1.5)) + "em'>" + split_target_words[i].replaceAll("_", " ") + "</span></a>";
+
+
+                var new_t = split_target_words.join(" ");
+
+                d3.select("#target_content_data")
+                    .html(new_t);
+            }
+
+
+        }
+
+
+        "use strict";
+        var count = [];
+
+        data_node_links_.Nodes.forEach(function (d) {
+            count[d.lvl] = 0;
+        });
+
+        lvlCount = count.length;
+
+
+        // Concepts in the source artifact that have either a link or definition
+
+
+        var valid_sources = [];
+        var valid_targets = [];
+
+        data_node_links_.links.forEach(function (d) {
+            if (stemmer(d.source) !== stemmer(d.target)) {
+                valid_sources.push(d.source + "_s");
+                valid_targets.push(d.target + '_t');
+            }
+        });
+
+
+        Nodes = [];
+        Definitions_ = [];
+        // links = [];
+        // Acronyms_ = [];
+        // Contexts_ = [];
+
+        data_node_links_.Nodes.forEach(function (d, i) {
+            Definitions_.push({"name": d.name,
+                "definition" : conceptDef(d.name, concept_definitions_)});
+            // console.log("a def", concept_acronyms_)
+
+            if (source_linked_to.includes(d.name) ||
+                target_linked_to.includes(d.name)) {
+
+
+                if ((valid_sources.includes(d.name+"_s") && d.type==="source") || (valid_targets.includes(d.name+"_t") && d.type==="target")) {
+
+                    if (d.lvl === 0 ) {
+
+                        d.x = margin.left + d.lvl * (boxWidth + gap.width);
+
+                    }
+                    else if(d.lvl === 1) {
+                        d.x = d.lvl * (boxWidth + gap.width) - margin.right;
+
+                    }
+                    d.y = margin.top + (boxHeight + gap.height) * count[d.lvl];
+                    d.cl = colors(stemmer(d.name)); //getUniqueColors(d.name, data_concepts_unique);
+                    d.definition = conceptDef(d.name, concept_definitions_);
+                    d.acronym = conceptAcr(d.name, concept_acronyms_);
+                    d.context = conceptContxt(d.name, concept_contexts_);
+                    d.imp_score = conceptImportanceScores(d.name, concept_importance_scores_);
+                    d.id = "n" + i;
+                    count[d.lvl] += 1;
+                    Nodes.push(d);
+                }
+            }
+
+
+
+        });
+
+
+        links = [];
+        data_node_links_.links.forEach(function (d) {
+            // links = [];
+
+            // console.log("myttt", d);
+            if (stemmer(d.source) !== stemmer(d.target)) {
+                links.push({
+                    source: find(d.source, "source"),
+                    target: find(d.target, "target"),
+
+                    id: "l" + find(d.source, "source").id + find(d.target, "target").id,
+                    relationship: d.relationship
+                });
+            }
+
+        });
+
+
+        // Draw all of the nodes
+        svg.append("g")
+            .attr("class", "nodes");
+
+        var node = svg.select(".nodes")
+            .selectAll("g")
+            .data(Nodes)
+            .enter()
+            .append("g")
+            .attr("class", "unit");
+
+
+        // console.log("Nodes:::", Nodes);
+
+
+        node.append("rect")
+            .attr("x", function (d) {
+                return d.x;
+            })
+            .attr("y", function (d) {
+                return d.y;
+            })
+            .attr("id", function (d) {
+                return d.id;
+            })
+            .attr("width", boxWidth)
+            .attr("height", boxHeight)
+            .attr("class", "node")
+            .attr("fill", function (d) {
+                return colors(stemmer(d.name));//getUniqueColors(d.name, data_concepts_unique); // in case we want the color to change based on the color of the text
+            })
+            // .attr("fill-opacity", "0.5")
+            .attr("stroke", "darkgrey")
+            .attr("stroke-width", "2px")
+            // // .attr("fill", "blue")
+            .on("mouseover", function () {
+                mouse_action(d3.select(this).datum(), true);
+            })
+            .on("mouseout", function () {
+                mouse_action_clear(d3.select(this).datum(), false);
+            });
+
+
+
+        // Add the text to display in the rect (i.e., each node)
+        node.append("text")
+            .attr("class", "label")
+            .attr("x", function (d) {
+                return d.x + boxWidth / 8;
+            })
+            .attr("y", function (d) {
+                return d.y + 1 ;
+            })
+            .text(function (d) {
+                return d.name.replaceAll("_", " ");
+            })
+            .call(wrap, 20)
+            // .html(function (d) {
+            //     return "<p>" + "hi" + "</p>" //d.name.replaceAll("_", " ");
+            // })
+            .attr("font-size", (boxWidth * 0.007) + "em");
+        // .attr("width", "2px");
+
+
+
+        links.forEach(function (li) {
+            svg.append("path", "g")
+                .attr("class", "link_d3")
+                .attr("stroke", "darkgray")
+                // .style("stroke-dasharray", ("3, 3"))
+                .attr("id", li.id)
+                .attr("d", function () {
+                    var oTarget = {
+
+                        x: li.target.y + 0.5 * boxHeight,
+                        y: li.target.x
+                    };
+                    var oSource = {
+                        x: li.source.y + 0.5 * boxHeight,
+                        y: li.source.x
+                    };
+
+                    if (oSource.y < oTarget.y) {
+                        oSource.y += boxWidth;
+                    } else {
+                        oTarget.y += boxWidth;
+                    }
+                    return diagonal({
+                        source: oSource,
+                        target: oTarget
+                    });
+                })
+                // .attr("stroke-width", "black")
+                .on("mouseover", function () {
+                    mouse_action_link(li);
+                })
+                .on("mouseout", function () {
+                    mouse_action_link_clear(li)
+                });
+        });
+
+
+        links = [];
+        Nodes = [];
+        // console.log("Links:::", links);
+
+
+
+    }
+
+
+    function wrap(text, width) {
+        text.each(function () {
+            var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                x = text.attr("x"),
+                y = text.attr("y"),
+                dy = 0, //parseFloat(text.attr("dy")),
+                tspan = text.text(null)
+                    .append("tspan")
+                    .attr("x", x)
+                    .attr("y", y)
+                    .attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                        .text(word);
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+    function urlMouseAction(m){
+        var concept = m.text.replace(/[.,\/#!$%\^&\*;:{}=`~()]/g,"");
+        concept = concept.split(" ").join("_");
+        var definition, acronyms, contexts;
+        console.log("urlMouseAction", Acronyms_);
+
+
+
+        // console.log(Nodes);
+        for (var i = 0; i < Definitions_.length; i++){
+            // console.log("uuuiiii");
+            // console.log(Definitions_[i].name +" : " + concept);
+            if (Definitions_[i].name === concept){
+                definition = Definitions_[i].definition;
+
+
+            }
+        }
+
+        for (var i = 0; i < Acronyms_.length; i++){
+            if (Acronyms_[i].name === concept){
+                acronyms =  Acronyms_[i].acronym;
+
+
+            }
+        }
+
+
+        for (var i = 0; i < Contexts_.length; i++){
+            if (Contexts_[i].name === concept){
+                contexts = Contexts_[i].context;
+
+
+            }
+        }
+
+
+        var message1, message2, message3, message;
+        message = "<ul style='text-align: left; padding :10px; margin:10px;'>";
+
+        message1 = typeof definition ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Definition</b></span>: "+ definition.substring(0,200)+ "..." +"</li>";
+        message2 = typeof acronyms ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Acronyms</b></span>: "+ acronyms + "</li>";
+        message3 = typeof contexts ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Contexts</b></span>: "+ contexts + "</li>";
+
+        message += message1 + message2 + message3+ "</ul>";
+
+        hover(message);
+
+
+
+    }
+
+
+    function mouse_action(val, stat) {
+        "use strict";
+        var concept = val.name;
+        var concept_type = val.lvl;
+        var definition, acronyms, contexts;
+
+        d3.select("#" + val.id)
+            .attr("fill", val.cl)
+            .attr("fill-opacity", "1")
+            .attr("stroke", "red")
+            .attr("stroke-width", "2.5px");
+
+        // console.log("This is val acronym", val)
+
+        var message1, message2, message3, message;
+        definition = val.definition;
+        acronyms = val.acronym;
+        contexts = val.context;
+
+        message = "<ul style='text-align: left; padding :10px; margin:10px;'>";
+
+        message1 = typeof definition ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Definition</b></span>: "+ definition +"</li>";
+        message2 = typeof acronyms ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Acronyms</b></span>: "+ acronyms + "</li>";
+        message3 = typeof contexts ==="undefined" ? "" : "<li style='margin-top: 10px;'><span style='text-transform: capitalize'><b>Contexts</b></span>: "+ contexts + "</li>";
+
+        message += message1 + message2 + message3+ "</ul>";
+
+        hover(message);
+
+
+        var classNames_s = document.querySelectorAll("[class*=_s]");
+        var classNames_t = document.querySelectorAll("[class*=_t]");
+        var totalClassNames = [];
+        classNames_s.forEach(q=>{
+            totalClassNames.push(q.textContent.replace("_s", "").replace(/[.,\#!$%\^&\*;:{}=`~()]/g,""));
+        });
+        classNames_t.forEach(q =>{
+            totalClassNames.push(q.textContent.replace("_t", "").replace(/[.,\#!$%\^&\*;:{}=`~()]/g,""));
+        });
+
+        var totalClassNames_ = [...new Set(totalClassNames)];
+        totalClassNames_.sort();
+
+
+
+
+        // Change the styling of the artifact content based on the concept (node / rect) that the user is hovering on
+        if (concept_type===0){
+            var extractContent =  document.getElementsByClassName(val.name+"_s");
+            // extractContent.style("background-color: pink");
+            for (var i = 0; i < extractContent.length; i++) {
+                extractContent[i].style.borderStyle = "solid";
+                extractContent[i].style.borderColor = "red";
+            }
+
+
+            for (var j = 0; j < classNames_s.length; j++) {
+                var otherclassNamesEach = classNames_s[j].className;
+                // console.log(val.name);
+                if (otherclassNamesEach !== val.name+"_s"){
+                    var extractContent_other_source_classes =  document.getElementsByClassName(otherclassNamesEach);
+                    // console.log(extractContent_other_source_classes)
+                    for (var k = 0; k < extractContent_other_source_classes.length; k++) {
+
+
+                        extractContent_other_source_classes[k].style.backgroundColor = "transparent";
+
+                    }
+
+                }
+
+            }
+
+        }
+        else {
+            var extractContent =  document.getElementsByClassName(val.name+"_t");
+
+            for (var i = 0; i < extractContent.length; i++) {
+                extractContent[i].style.borderStyle = "solid";
+                extractContent[i].style.borderColor = "red";
+            }
+
+
+            for (var j = 0; j < classNames_t.length; j++) {
+                var otherclassNamesEach_t = classNames_t[j].className;//classNames_t[j].textContent.replace(".","").replace(",", "");
+                // console.log(val.name)
+                // console.log(classNames_t[j].className);
+
+                // console.log(val.name+"_t", " hey ", classNames_t[j].className);
+
+                if (otherclassNamesEach_t !== val.name+"_t"){
+                    // console.log(val.name);
+                    var extractContent_other_target_classes =  document.getElementsByClassName(otherclassNamesEach_t);
+                    // console.log(extractContent_other_target_classes)
+                    for (var k = 0; k < extractContent_other_target_classes.length; k++) {
+
+
+                        extractContent_other_target_classes[k].style.backgroundColor = "transparent";
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+
+    function resetInfoBoardMsg(){
+        document.getElementById('relationship_update').innerHTML = "";
+    }
+
+
+    function mouse_action_link(val) {
+
+        var clicked_link = [];
+
+        clicked_link.push(val);
+
+        d3.select("#" + val.id).attr("stroke", "red").attr("stroke-width", "2.5px");
+
+        clicked_link.forEach(function (d) {
+
+            var source_info = d.source;
+            var target_info = d.target;
+
+
+            var highlight_source = d3.select("#" + source_info.id)
+                .attr("fill-opacity", "1")
+                .attr("stroke", "red")
+                .attr("stroke-width", "2.5px");
+            ;
+
+            var highlight_target = d3.select("#" + target_info.id)
+                .attr("fill-opacity", "1")
+                .attr("stroke", "red")
+                .attr("stroke-width", "2.5px");
+            ;
+
+
+            // var message = "<span style='text-transform: uppercase; font-weight: bold'>"+ source_info.name +"</span> is a/an "+
+            //     "<span style='text-transform: uppercase'><b><u>"+ val.relationship +"</u></b></span> " +
+            //     "<span style=text-transform: uppercase; font-weight: bold'>"+ target_info.name + "</span>";
+
+            var msg = "<ul style='text-align: left; padding :10px; margin:10px;'>";
+
+
+
+            // console.log("Today is Thursday im June");
+            for(var b = 0; b < val.relationship.length; b++){
+                msg = msg + "<li style='margin-top: 10px;'><span class='material-icons' style='font-size: 10px'>fiber_manual_record</span>&nbsp;&nbsp;&nbsp; " +
+                    // +"<span style='text-transform: uppercase; font-weight: bold'>"+
+                    // +"here" +
+                    "<span style='text-transform: uppercase; font-weight: bold'>"+
+                    val.relationship[b].concept_1.replaceAll("_", " ")+"&nbsp;</span>"+
+                    // " is a(n)" +
+                    "<span style='background-color: lightgoldenrodyellow'>" + val.relationship[b].relation_type  + "</span>"+
+                    "&nbsp;<span style='text-transform: uppercase; font-weight: bold'>"+
+                    val.relationship[b].concept_2.replaceAll("_", " ")+"</span>" + "</li>";
+                console.log(val.relationship[b])
+            }
+            // console.log(msg+"</ul>");
+            // console.log("Today is Thursday in June x");
+
+            hover(msg +"</ul>");
+
+
+            // get all of the class names in the document that has both concepts in the source and target artifacts
+            var classNames_s = document.querySelectorAll("[class*=_s]");
+            var classNames_t = document.querySelectorAll("[class*=_t]");
+            var totalClassNames = [];
+            classNames_s.forEach(q=>{
+                totalClassNames.push(q.textContent.replace("_s", "").replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g,""));
+            });
+            classNames_t.forEach(q =>{
+                totalClassNames.push(q.textContent.replace("_t", "").replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g,""));
+            });
+
+            var totalClassNames_ = [...new Set(totalClassNames)];
+            totalClassNames_.sort();
+
+            var updateStyleSource =  document.getElementsByClassName(source_info.name + "_s");
+            for (var i = 0; i < updateStyleSource.length; i++) {
+                updateStyleSource[i].style.borderStyle = "solid";
+                updateStyleSource[i].style.borderColor = "red";
+            }
+
+            for (var j = 0; j < classNames_s.length; j++) {
+                var otherclassNamesEach = classNames_s[j].className;
+                if (otherclassNamesEach !== source_info.name +"_s"){
+                    var extractContent_other_source_classes =  document.getElementsByClassName(otherclassNamesEach);
+
+                    for (var k = 0; k < extractContent_other_source_classes.length; k++) {
+
+
+                        extractContent_other_source_classes[k].style.backgroundColor = "transparent";
+
+                    }
+
+                }
+
+            }
+
+
+
+
+            var updateStyleTarget =  document.getElementsByClassName(target_info.name + "_t");
+            for (var i = 0; i < updateStyleTarget.length; i++) {
+                updateStyleTarget[i].style.borderStyle = "solid";
+                updateStyleTarget[i].style.borderColor = "red";
+            }
+
+            for (var j = 0; j < classNames_t.length; j++) {
+                var otherclassNamesEach_t = classNames_t[j].className;
+                if (otherclassNamesEach_t !== target_info.name + "_t"){
+                    var extractContent_other_target_classes =  document.getElementsByClassName(otherclassNamesEach_t);
+                    for (var k = 0; k < extractContent_other_target_classes.length; k++) {
+
+                        console.log("Just testing before: ", extractContent_other_target_classes[k]);
+                        extractContent_other_target_classes[k].style.backgroundColor = "transparent";
+
+
+                    }
+
+                }
+
+            }
+        });
+
+    }
+
+    function mouse_action_link_clear(val) {
+
+        var clicked_link = [];
+
+        clicked_link.push(val);
+
+        d3.select("#" + val.id).attr("stroke", "darkgray").attr("stroke-width", "2px");
+
+        clicked_link.forEach(function (d) {
+
+            var source_info = d.source;
+            var target_info = d.target;
+
+
+            var highlight_source = d3.select("#" + source_info.id)
+            // .attr("fill-opacity", "0.6")
+                .attr("stroke", "darkgrey")
+                .attr("stroke-width", "2px");
+            ;
+
+            var highlight_target = d3.select("#" + target_info.id)
+            // .attr("fill-opacity", "0.6")
+                .attr("stroke", "darkgray")
+                .attr("stroke-width", "2px");
+            ;
+
+            resetInfoBoardMsg();
+
+            // var classNames_s = document.querySelectorAll("[class*=_s]");
+            // var classNames_t = document.querySelectorAll("[class*=_t]");
+            // var totalClassNames = [];
+            // classNames_s.forEach(q=>{
+            //     totalClassNames.push(q.textContent.replace("_s", "").replace(".","").replace(",", ""));
+            // });
+            // classNames_t.forEach(q =>{
+            //     totalClassNames.push(q.textContent.replace("_t", "").replace(".","").replace(",", ""));
+            // });
+            //
+            // var totalClassNames_ = [...new Set(totalClassNames)];
+            // totalClassNames_.sort();
+
+
+            var updateStyleSource =  document.getElementsByClassName(source_info.name + "_s");
+            for (var i = 0; i < updateStyleSource.length; i++) {
+                // updateStyleSource[i].style.fontSize = "1em";
+                updateStyleSource[i].style.borderStyle = "none";
+            }
+
+            for (var j = 0; j < filtered_source_concepts.length; j++) {
+                var otherclassNamesEach = filtered_source_concepts[j];
+                if (otherclassNamesEach !== source_info.name){
+                    var extractContent_other_source_classes =  document.getElementsByClassName(otherclassNamesEach + "_s");
+                    for (var k = 0; k < extractContent_other_source_classes.length; k++) {
+
+
+                        extractContent_other_source_classes[k].style.backgroundColor = colors(stemmer(extractContent_other_source_classes[k].textContent.split(" ").join("_").replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g,"")));
+
+                    }
+
+                }
+
+            }
+
+
+
+
+            var updateStyleTarget =  document.getElementsByClassName(target_info.name + "_t");
+            for (var i = 0; i < updateStyleTarget.length; i++) {
+                updateStyleTarget[i].style.borderStyle = "none";
+            }
+
+            for (var j = 0; j < filtered_target_concepts.length; j++) {
+                var otherclassNamesEach_t = filtered_target_concepts[j];
+                if (otherclassNamesEach_t !== target_info.name){
+                    var extractContent_other_target_classes =  document.getElementsByClassName(otherclassNamesEach_t + "_t");
+                    for (var k = 0; k < extractContent_other_target_classes.length; k++) {
+
+
+
+                        extractContent_other_target_classes[k].style.backgroundColor = colors(stemmer(extractContent_other_target_classes[k].textContent.split(" ").join("_").replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"")));
+
+                        console.log("Just testing after: ", extractContent_other_target_classes[k]);
+                    }
+
+                }
+
+            }
+
+
+
+
+
+        });
+
+
+
+
+    }
+
+
+    function mouse_action_clear(val, stat) {
+        var concept = val.name;
+        var concept_type = val.lvl;
+        "use strict";
+        d3.select("#" + val.id)
+            .attr("fill", val.cl)
+            .attr("stroke", "darkgray")
+            .attr("stroke-width", "2px");
+        // d3.select("#" + val.id).classed("active_d3", stat);
+        resetInfoBoardMsg();
+
+        var classNames_s = document.querySelectorAll("[class*=_s]");
+        var classNames_t = document.querySelectorAll("[class*=_t]");
+
+
+        if (concept_type === 0){
+            var extractContent =  document.getElementsByClassName(val.name+"_s");
+            for (var i = 0; i < extractContent.length; i++) {
+                extractContent[i].style.borderStyle = "none";
+
+            }
+
+            for (var j = 0; j < filtered_source_concepts.length; j++) {
+                // var otherclassNamesEach = classNames_s[j].className;
+                var otherclassNamesEach = filtered_source_concepts[j];
+                if (otherclassNamesEach !== val.name){
+                    var extractContent_other_source_classes =  document.getElementsByClassName(otherclassNamesEach+"_s");
+                    for (var k = 0; k < extractContent_other_source_classes.length; k++) {
+
+                        // if (filtered_source_concepts.includes(extractContent_other_source_classes[k])) {
+                        // console.log("debugging")
+                        extractContent_other_source_classes[k].style.backgroundColor = colors(stemmer(extractContent_other_source_classes[k].textContent.split(" ").join("_").replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"")));
+                        // }
+
+                    }
+
+                }
+
+            }
+        }
+        else {
+            var extractContent =  document.getElementsByClassName(val.name+"_t");
+
+            for (var i = 0; i < extractContent.length; i++) {
+                extractContent[i].style.borderStyle = "none";
+            }
+
+
+
+            for (var j = 0; j < filtered_target_concepts.length; j++) {
+                var otherclassNamesEach_t = filtered_target_concepts[j];//classNames_t[j].textContent.replace(".","").replace(",", "");
+
+                if (otherclassNamesEach_t !== val.name){
+                    // console.log(val.name);
+                    var extractContent_other_target_classes =  document.getElementsByClassName(otherclassNamesEach_t + "_t");
+                    // console.log(extractContent_other_target_classes)
+                    for (var k = 0; k < extractContent_other_target_classes.length; k++) {
+
+
+                        extractContent_other_target_classes[k].style.backgroundColor = colors(stemmer(extractContent_other_target_classes[k].textContent.split(" ").join("_").replace(/[.,\#!$%\^&\*;:{}=`~()]/g,"")));
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+
+    function find(text, tp) {
+        // "use strict";
+        var i;
+
+        for (i = 0; i < Nodes.length; i += 1) {
+            if (Nodes[i].type === tp && Nodes[i].name=== text) {
+                return Nodes[i];
+
+            }
+        }
+
+        return null;
+    }
+
+    // const colors = d3.scaleOrdinal()
+    //     .range(d3.schemeSet3);
+
+    const colors = d3.scaleOrdinal()
+        .range(["#a9a9a9",
+            // "#2f4f4f",
+            //  "#556b2f",
+            "#C89D7C", // "#a0522d",
+            "#2e8b57",
+            // "#800000",
+            // "#191960",
+            // "#708090",
+            "#bc8f8f",
+            // "#663399",
+            // "#008080",
+            "#bdb76b",
+            "#9acd32",
+            "#daa520",
+            "#8fbc8f",
+            // "#8b008b",
+            "#b03060",
+            "#6b8e23",
+            "#cd853f",
+            "#ffa500",
+            // "#c71585",
+            // "#0000cd",
+            // "#006400",
+            "#4682b4",
+            "#20b2aa",
+            "#ffd700",
+            "#4169e1",
+            // "#dc143c",
+            "#00bfff",
+            "#9370db",
+            // "#0000ff",
+            "#f08080",
+            "#ff6347",
+            "#db7093",
+            "#eee8aa",
+            "#ffb6c1",
+            "#afeeee",
+            "#da70d6",
+            // "#8b4513",
+            "#1e90ff",
+            "#ffff00",
+            "#3cb371",
+            "#afeeee",
+            // "#b22222"
+        ]);
+
+
+    var stemmer = (function(){
+        var step2list = {
+                "ational" : "ate",
+                "tional" : "tion",
+                "enci" : "ence",
+                "anci" : "ance",
+                "izer" : "ize",
+                "bli" : "ble",
+                "alli" : "al",
+                "entli" : "ent",
+                "eli" : "e",
+                "ousli" : "ous",
+                "ization" : "ize",
+                "ation" : "ate",
+                "ator" : "ate",
+                "alism" : "al",
+                "iveness" : "ive",
+                "fulness" : "ful",
+                "ousness" : "ous",
+                "aliti" : "al",
+                "iviti" : "ive",
+                "biliti" : "ble",
+                "logi" : "log"
+            },
+
+            step3list = {
+                "icate" : "ic",
+                "ative" : "",
+                "alize" : "al",
+                "iciti" : "ic",
+                "ical" : "ic",
+                "ful" : "",
+                "ness" : ""
+            },
+
+            c = "[^aeiou]",          // consonant
+            v = "[aeiouy]",          // vowel
+            C = c + "[^aeiouy]*",    // consonant sequence
+            V = v + "[aeiou]*",      // vowel sequence
+
+            mgr0 = "^(" + C + ")?" + V + C,               // [C]VC... is m>0
+            meq1 = "^(" + C + ")?" + V + C + "(" + V + ")?$",  // [C]VC[V] is m=1
+            mgr1 = "^(" + C + ")?" + V + C + V + C,       // [C]VCVC... is m>1
+            s_v = "^(" + C + ")?" + v;                   // vowel in stem
+
+        function dummyDebug() {}
+
+        function realDebug() {
+            console.log(Array.prototype.slice.call(arguments).join(' '));
+        }
+
+        return function (w, debug) {
+            var
+                stem,
+                suffix,
+                firstch,
+                re,
+                re2,
+                re3,
+                re4,
+                debugFunction,
+                origword = w;
+
+            if (debug) {
+                debugFunction = realDebug;
+            } else {
+                debugFunction = dummyDebug;
+            }
+
+            if (w.length < 3) { return w; }
+
+            firstch = w.substr(0,1);
+            if (firstch == "y") {
+                w = firstch.toUpperCase() + w.substr(1);
+            }
+
+            // Step 1a
+            re = /^(.+?)(ss|i)es$/;
+            re2 = /^(.+?)([^s])s$/;
+
+            if (re.test(w)) {
+                w = w.replace(re,"$1$2");
+                debugFunction('1a',re, w);
+
+            } else if (re2.test(w)) {
+                w = w.replace(re2,"$1$2");
+                debugFunction('1a',re2, w);
+            }
+
+            // Step 1b
+            re = /^(.+?)eed$/;
+            re2 = /^(.+?)(ed|ing)$/;
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                re = new RegExp(mgr0);
+                if (re.test(fp[1])) {
+                    re = /.$/;
+                    w = w.replace(re,"");
+                    debugFunction('1b',re, w);
+                }
+            } else if (re2.test(w)) {
+                var fp = re2.exec(w);
+                stem = fp[1];
+                re2 = new RegExp(s_v);
+                if (re2.test(stem)) {
+                    w = stem;
+                    debugFunction('1b', re2, w);
+
+                    re2 = /(at|bl|iz)$/;
+                    re3 = new RegExp("([^aeiouylsz])\\1$");
+                    re4 = new RegExp("^" + C + v + "[^aeiouwxy]$");
+
+                    if (re2.test(w)) {
+                        w = w + "e";
+                        debugFunction('1b', re2, w);
+
+                    } else if (re3.test(w)) {
+                        re = /.$/;
+                        w = w.replace(re,"");
+                        debugFunction('1b', re3, w);
+
+                    } else if (re4.test(w)) {
+                        w = w + "e";
+                        debugFunction('1b', re4, w);
+                    }
+                }
+            }
+
+            // Step 1c
+            re = new RegExp("^(.*" + v + ".*)y$");
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                stem = fp[1];
+                w = stem + "i";
+                debugFunction('1c', re, w);
+            }
+
+            // Step 2
+            re = /^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$/;
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                stem = fp[1];
+                suffix = fp[2];
+                re = new RegExp(mgr0);
+                if (re.test(stem)) {
+                    w = stem + step2list[suffix];
+                    debugFunction('2', re, w);
+                }
+            }
+
+            // Step 3
+            re = /^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$/;
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                stem = fp[1];
+                suffix = fp[2];
+                re = new RegExp(mgr0);
+                if (re.test(stem)) {
+                    w = stem + step3list[suffix];
+                    debugFunction('3', re, w);
+                }
+            }
+
+            // Step 4
+            re = /^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize)$/;
+            re2 = /^(.+?)(s|t)(ion)$/;
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                stem = fp[1];
+                re = new RegExp(mgr1);
+                if (re.test(stem)) {
+                    w = stem;
+                    debugFunction('4', re, w);
+                }
+            } else if (re2.test(w)) {
+                var fp = re2.exec(w);
+                stem = fp[1] + fp[2];
+                re2 = new RegExp(mgr1);
+                if (re2.test(stem)) {
+                    w = stem;
+                    debugFunction('4', re2, w);
+                }
+            }
+
+            // Step 5
+            re = /^(.+?)e$/;
+            if (re.test(w)) {
+                var fp = re.exec(w);
+                stem = fp[1];
+                re = new RegExp(mgr1);
+                re2 = new RegExp(meq1);
+                re3 = new RegExp("^" + C + v + "[^aeiouwxy]$");
+                if (re.test(stem) || (re2.test(stem) && !(re3.test(stem)))) {
+                    w = stem;
+                    debugFunction('5', re, re2, re3, w);
+                }
+            }
+
+            re = /ll$/;
+            re2 = new RegExp(mgr1);
+            if (re.test(w) && re2.test(w)) {
+                re = /.$/;
+                w = w.replace(re,"");
+                debugFunction('5', re, re2, w);
+            }
+
+            // and turn initial Y back to y
+            if (firstch == "y") {
+                w = firstch.toLowerCase() + w.substr(1);
+            }
+
+
+            return w;
+        }
+    })();
+
+    function conceptDef(val, val_array) {
+
+        for (var i = 0; i < val_array.length; i++){
+            if (val_array[i].name === val){
+                return val_array[i].definition;
+            }
+        }
+
+        // console.log("val array", val_array);
+
+    }
+
+
+    function conceptAcr(val, val_array) {
+
+        for (var i = 0; i < val_array.length; i++){
+            if (val_array[i].name === val){
+                return val_array[i].acronym;
+            }
+        }
+
+        // console.log("val array", val_array);
+
+    }
+
+    function conceptContxt(val, val_array) {
+
+        for (var i = 0; i < val_array.length; i++){
+            if (val_array[i].name === val){
+                return val_array[i].context;
+            }
+        }
+
+        // console.log("val array", val_array);
+
+    }
+
+    function conceptImportanceScores(val, val_array) {
+
+        for (i= 0; i < val_array.length; i++){
+            if (val_array[i].name === val){
+                return val_array[i].imp_score;
+            }
+        }
+
+    }
+
+    // function loadD(data){
+
+
+    // }
+
+    function hover(message) {
+
+        document.getElementById('relationship_update').innerHTML = message;
+    }
+
+    function urlMouseAction_leave(){
+
+
+        document.getElementById('relationship_update').innerHTML = "";
+    }
+
+    function round(value, precision) {
+        var multiplier = Math.pow(10, precision || 0);
+        return Math.round(value * multiplier) / multiplier;
+    }
+
+
+
+
+
+    function artifact_value(dat) {
+        var current_id = dat.pop();
+        document.getElementById("artifact_num").textContent = "Submit";
+        restart();
+        return current_id;
+
+    }
+
+    function restart() {
+        var node = svg.select(".nodes").selectAll("g")
+            .data(Nodes);
+        node.exit()
+            .remove();
+
+        // console.log("I am here!", Nodes)
+
+        var link = svg.selectAll("path")
+            .data(links.splice(0, Nodes.length));
+
+        link.exit()
+            .remove();
+    }
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+    function myFunction() {
+        location.replace("http://trace-exp-study.github.io/pages/thank%20you%20page.html")
+    }
+
+    var a_list = [2, 3, 6, 7, 10, 11, 14, 15, 18, 19,
+                    21, 24, 25, 28, 29, 32, 33, 36, 37, 40,
+                    42, 43, 46, 47, 50, 51, 54, 55, 58, 59];
+    // var a_list = [];
+    var mlength = 30;
+
+    a_list = a_list.map(function(item) {
+        // Decrement each item by 1
+        return item - 1;
+    });
+
+    // console.log("my index = ", a_list.length);
+
+    var a_val = -1;
+    var click_count =0;
+
+
+    document.getElementById("artifact_num").addEventListener("click", dosth);
+
+
+    function dosth(){
+
+
+        restart();
+        shuffleArray(a_list);
+        var artifact_val = artifact_value(a_list);
+        click_count++;
+        document.getElementById("art_num_").textContent = artifact_val;
+
+
+        a_val = artifact_val;
+        // console.log(a_val, " good");
+
+
+        if(click_count === (mlength+1)){
+            setTimeout(myFunction, 500);
+        }
+
+
+        d3.json("combined_data_links.json").then(data => {
+
+            drawSource(data, a_val);
+            drawTargets(data, a_val);
+
+
+
+        });
+        return artifact_val;
+
+
+    }
+
+
+
+</script>
+
+</html>
