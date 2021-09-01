@@ -84,6 +84,9 @@
 
                                     <button type="button" class="btn btn-small" style="background-color: white; display: none; cursor: unset; box-shadow: none; color: black; "><b>ID: </b><span id="art_num_"></span></button>
 
+                                    <button type="button" class="btn btn-small links_rated_btn" style="background-color: white; cursor: unset; box-shadow: none;
+                                    color: black; "><b>Rated: </b> <span id="links_rated_btn" ></span></button>
+
                                 </div>
                                 <!--<p class="art_summary" style="display: none; font-size: 0.9em; padding: 10px; margin-left: 20px;">The system shall provide the ability to receive and store general laboratory results (includes ability to differentiate preliminary results and final results and the ability to process a corrected result)...</p>-->
                             </div>
@@ -1880,6 +1883,7 @@
         a_val = artifact_val;
         // console.log(a_val, " good");
 
+        document.getElementById("links_rated_btn").textContent = (click_count-1) + " / 30";
 
         if(click_count === (mlength+1)){
             setTimeout(myFunction, 500);
