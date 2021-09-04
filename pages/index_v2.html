@@ -85,7 +85,7 @@
                                     <button type="button" class="btn btn-small" style="background-color: white; display: none; cursor: unset; box-shadow: none; color: black; "><b>ID: </b><span id="art_num_"></span></button>
 
                                     <button type="button" class="btn btn-small links_rated_btn" style="background-color: white; cursor: unset; box-shadow: none;
-                                    color: black; "><b>Rated: </b> <span id="links_rated_btn" ></span></button>
+                                    color: black; display: none"><b>Rated: </b> <span id="links_rated_btn" ></span></button>
 
                                 </div>
                                 <!--<p class="art_summary" style="display: none; font-size: 0.9em; padding: 10px; margin-left: 20px;">The system shall provide the ability to receive and store general laboratory results (includes ability to differentiate preliminary results and final results and the ability to process a corrected result)...</p>-->
@@ -1471,59 +1471,59 @@
         return null;
     }
 
-    // const colors = d3.scaleOrdinal()
-    //     .range(d3.schemeSet3);
-
     const colors = d3.scaleOrdinal()
-        .range(["#a9a9a9",
-            //"#2f4f4f",
-          //  "#556b2f",
-          "#C89D7C", // "#a0522d",
-           // "#2e8b57",
-            // "#800000",
-            // "#191960",
-            // "#708090",
-            "#bc8f8f",
-            "#f58c91",
-            "#ebc18a",
-            // "#663399",
-            // "#008080",
-            "#bdb76b",
-            "#9acd32",
-            "#daa520",
-            "#8fbc8f",
-            // "#8b008b",
-          // "#a24857",// "#b03060",
-           "#6b8e23",
-            "#cd853f",
-            "#ffa500",
-            "#90d3f5",
-            "#c71585",
-            // "#0000cd",
-            // "#006400",
-            "#4682b4",
-            "#20b2aa",
-            "#ffd700",
-           "#44b2f2",//"#4169e1",
-            "#dc143c",
-            // "#00bfff",
-            "#CBC3E3",
-            "#9370db",
-            // "#0000ff",
-            "#f08080",
-           "#ff6347",
-            "#db7093",
-            "#eee8aa",
-            "#ffb6c1",
-            "#afeeee",
-            "#da70d6",
-            "#8b4513",
-            // "#1e90ff",
-            "#ffff00",
-            "#3cb371",
-            "#afeeee",
-            // "#b22222"
-        ]);
+        .range(d3.schemeSet3);
+
+    // const colors = d3.scaleOrdinal()
+    //     .range(["#a9a9a9",
+    //         //"#2f4f4f",
+    //       //  "#556b2f",
+    //       "#C89D7C", // "#a0522d",
+    //        // "#2e8b57",
+    //         // "#800000",
+    //         // "#191960",
+    //         // "#708090",
+    //         "#bc8f8f",
+    //         "#f58c91",
+    //         "#ebc18a",
+    //         // "#663399",
+    //         // "#008080",
+    //         "#bdb76b",
+    //         "#9acd32",
+    //         "#daa520",
+    //         "#8fbc8f",
+    //         // "#8b008b",
+    //       // "#a24857",// "#b03060",
+    //        "#6b8e23",
+    //         "#cd853f",
+    //         "#ffa500",
+    //         "#90d3f5",
+    //         "#c71585",
+    //         // "#0000cd",
+    //         // "#006400",
+    //         "#4682b4",
+    //         "#20b2aa",
+    //         "#ffd700",
+    //        "#44b2f2",//"#4169e1",
+    //         "#dc143c",
+    //         // "#00bfff",
+    //         "#CBC3E3",
+    //         "#9370db",
+    //         // "#0000ff",
+    //         "#f08080",
+    //        "#ff6347",
+    //         "#db7093",
+    //         "#eee8aa",
+    //         "#ffb6c1",
+    //         "#afeeee",
+    //         "#da70d6",
+    //         "#8b4513",
+    //         // "#1e90ff",
+    //         "#ffff00",
+    //         "#3cb371",
+    //         "#afeeee",
+    //         // "#b22222"
+    //     ]);
 
 
     var stemmer = (function(){
